@@ -1,0 +1,27 @@
+<!-- <p>charity works!</p>
+<div id="charity-list">
+<div *ngFor="let charity of charityList">
+{{charity.nameOfFond}}
+</div>
+
+</div> -->
+
+
+
+<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    <div class="col p-4 d-flex flex-column position-static" *ngFor="let charity of charityList">
+      <!-- <strong class="d-inline-block mb-2 text-primary">World</strong> -->
+      <h3 class="mb-0">{{charity.nameOfFond}}</h3>
+      <div class="mb-1 text-muted">Nov 12</div>
+      <p><img src="{{charity.imageURL}}" alt="" width="400" height="300" ></p>
+      <p class="card-text mb-auto">{{charity.description}}</p>
+      <button ng-model="myVar" _ngcontent-gyu-c205="" mat-stroked-button="" color="primary" class="mdc-button mdc-button--outlined mat-mdc-outlined-button mat-primary mat-mdc-button-base"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Primary</span><span class="mat-mdc-focus-indicator"></span><span matripple="" class="mat-ripple mat-mdc-button-ripple"></span><span class="mat-mdc-button-touch-target"></span></button>
+      <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+<p ng-hide="myVar">
+
+    <span>{{charity.bankAccountNumber}}</span>
+</p>
+
+    </div>
+  
+  </div>
