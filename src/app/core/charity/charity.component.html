@@ -15,12 +15,15 @@
       <div class="mb-1 text-muted">Nov 12</div>
       <p><img src="{{charity.imageURL}}" alt="" width="400" height="300" ></p>
       <p class="card-text mb-auto">{{charity.description}}</p>
-      <button ng-model="myVar" _ngcontent-gyu-c205="" mat-stroked-button="" color="primary" class="mdc-button mdc-button--outlined mat-mdc-outlined-button mat-primary mat-mdc-button-base"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Primary</span><span class="mat-mdc-focus-indicator"></span><span matripple="" class="mat-ripple mat-mdc-button-ripple"></span><span class="mat-mdc-button-touch-target"></span></button>
+      <button (click)="shuldShowText = true" _ngcontent-gyu-c205="" mat-stroked-button="" color="primary" class="mdc-button mdc-button--outlined mat-mdc-outlined-button mat-primary mat-mdc-button-base"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Donate </span><span class="mat-mdc-focus-indicator"></span><span matripple="" class="mat-ripple mat-mdc-button-ripple"></span><span class="mat-mdc-button-touch-target"></span></button>
       <!-- <a href="#" class="stretched-link">Continue reading</a> -->
-<p ng-hide="myVar">
+<p *ngIf="shuldShowText">
 
     <span>{{charity.bankAccountNumber}}</span>
+    <!-- shuldShowText = false -->
 </p>
+<button ngStyle="display= none" *ngIf="!shuldShowText" (click)="shuldShowText = false" _ngcontent-gyu-c205="" mat-stroked-button="" color="primary" class="mdc-button mdc-button--outlined mat-mdc-outlined-button mat-primary mat-mdc-button-base"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Hide</span><span class="mat-mdc-focus-indicator"></span><span matripple="" class="mat-ripple mat-mdc-button-ripple"></span><span class="mat-mdc-button-touch-target"></span></button>
+
 
     </div>
   

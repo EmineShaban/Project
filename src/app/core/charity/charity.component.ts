@@ -10,7 +10,7 @@ import { HomeService } from '../home.service';
 export class CharityComponent implements OnInit {
 
   charityList: ICharity[] | null = null
-  // shuldShowText: boolean = false
+  shuldShowText: boolean = false
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
