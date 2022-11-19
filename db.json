@@ -1,0 +1,23 @@
+[
+{
+  "_id": "1",
+  "nameOfFond": "Ukrain",
+  "imageURL": "http://www.globalr2p.org/wp-content/uploads/2022/04/Ukraine_Web-1.png",
+  "description": "akjnegrknjdnknjgrkjnkrnjkkrnknjnjnjnjkrj",
+  "bankAccountNumber": "7378737438773473837383"
+},
+{
+  "_id": "2",
+  "nameOfFond": "Bulgaria",
+  "imageURL": "http://www.globalr2p.org/wp-content/uploads/2022/04/Ukraine_Web-1.png",
+  "description": "nnntntntntn",
+  "bankAccountNumber": "2222"
+},
+{
+  "_id": "3",
+  "nameOfFond": "Africa",
+  "imageURL": "http://www.globalr2p.org/wp-content/uploads/2022/04/Ukraine_Web-1.png",
+  "description": "dndnndnd",
+  "bankAccountNumber": "484484848"
+}
+]
