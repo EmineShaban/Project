@@ -10,7 +10,7 @@ import { HomeService } from '../home.service';
 export class CharityComponent implements OnInit {
 
   charityList: ICharity[] | null = null
-  shuldShowText: boolean = false
+  show: boolean = false
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
@@ -24,5 +24,19 @@ export class CharityComponent implements OnInit {
   //   shuldShowText: true
   // }
 }
+
+// @Component({
+//   selector: 'ng-if-else',
+//   template: `
+//     <button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
+//     show = {{show}}
+//     <br>
+//     <div *ngIf="show; else elseBlock">Text to show</div>
+//     <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>
+// `
+// })
+// export class NgIfElse {
+//   show = true;
+// }
 
 
