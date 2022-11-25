@@ -13,3 +13,9 @@ export interface IUser {
 }
 
 
+// interface IUser {
+//     name: string;
+//     email: string;
+//     avatar?: string;
+//   }
+  

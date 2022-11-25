@@ -1,19 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { ICharity } from 'src/app/interfaces/charity';
+// import { ICharity } from 'src/app/interfaces/charity';
 import { HomeService } from '../home.service';
-
+import {ICharity} from '../../interfaces/charity'
 @Component({
   selector: 'app-charity',
   templateUrl: './charity.component.html',
   styleUrls: ['./charity.component.css']
 })
 export class CharityComponent implements OnInit {
+  charityList: any = [];
+  // selectedHero: ICharity;
 
-  charityList: ICharity[] | null = null
+  // charityList: ICharity[] | null = null
   show: boolean = false
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
+    // this.getHeroes();
+
     this.homeService.loadCharity().subscribe({
       next: (charityList) => {
         this.charityList = charityList
@@ -23,20 +27,11 @@ export class CharityComponent implements OnInit {
   // onClick(): void{
   //   shuldShowText: true
   // }
-}
+  // getHeroes() {
+  //   return this.homeService.loadCharity().subscribe(charityList1 => {
+  //     this.charityList = charityList1;
+  //   });
+  // }
+  
 
-// @Component({
-//   selector: 'ng-if-else',
-//   template: `
-//     <button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
-//     show = {{show}}
-//     <br>
-//     <div *ngIf="show; else elseBlock">Text to show</div>
-//     <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>
-// `
-// })
-// export class NgIfElse {
-//   show = true;
-// }
-
-
+}  
