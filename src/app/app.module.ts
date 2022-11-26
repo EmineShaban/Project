@@ -6,12 +6,15 @@ import { routes } from "./app-routing.module";
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CreateComponent } from './core/create/create.component';
+import { CreateComponent } from './core/meetings/create/create.component';
+import { FormsModule } from '@angular/forms';
+import { AllMeetingsComponent } from './core/meetings/all-meetings/all-meetings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateComponent,
+    AllMeetingsComponent,
     
   ],
   imports: [
@@ -20,6 +23,7 @@ import { CreateComponent } from './core/create/create.component';
     HttpClientModule,
     CoreModule,
     BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

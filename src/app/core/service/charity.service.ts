@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ICharity } from '../../interfaces/charity';
 
 
-const charityInfo = "http://localhost:3000/publication/charity"
+const charityInfo = "http://localhost:3000/charity"
 
 @Injectable({
   providedIn: 'root'
