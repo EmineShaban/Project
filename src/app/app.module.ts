@@ -6,10 +6,12 @@ import { routes } from "./app-routing.module";
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CreateComponent } from './core/create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CreateComponent,
     
   ],
   imports: [

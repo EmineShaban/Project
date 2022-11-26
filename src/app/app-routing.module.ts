@@ -12,18 +12,18 @@ export const routes: Routes = [
       path: 'charity',
       component: CharityComponent
    },
-   {
-      path: 'allMeetings',
-      component: CharityComponent
-   },
-   {
-      path: 'createMeetings',
-      component: CharityComponent
-   },
-   {
-      path: 'profile',
-      component: CharityComponent
-   },
+   // {
+   //    path: 'allMeetings',
+   //    component: CharityComponent
+   // },
+   // {
+   //    path: 'createMeetings',
+   //    component: CharityComponent
+   // },
+   // {
+   //    path: 'profile',
+   //    component: CharityComponent
+   // },
 
 
 ];
