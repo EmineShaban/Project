@@ -3,7 +3,7 @@ const router = require('express').Router()
 // const publicationServices = require('../services/meetingsServices')
 
 router.get('/', (req, res) => {
-    res.send('The chamber of srcrets')
+    // res.send('The chamber of srcrets')
 })
 
 router.get('/charity', async (req, res) => {
