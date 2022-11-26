@@ -1,8 +1,8 @@
 <!-- <p>all-meetings works!</p> -->
 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
     <div class="col p-4 d-flex flex-column position-static" *ngFor="let meeting of allMeetings">
-        <h3 class="mb-0">{{meeting.time}}</h3>
         <div class="mb-1 text-muted">{{meeting.date}}</div>
+        <h3 class="mb-0">{{meeting.time}}</h3>
         <p><img src="{{meeting.imageUrl}}" alt="" width="400" height="300"></p>
         <p class="card-text mb-auto">{{meeting.description}}</p>
 

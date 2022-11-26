@@ -25,10 +25,11 @@ app.use(express.urlencoded({extended : false}))
 // app.use(express.static('public'))
 app.use(cookieParser())
 // app.use(auth)
-app.use(routes)
 // app.use(errorHandler)
 // require("./app/routes/tutorial.routes")(app);
 
+app.use(routes)
+// app.use('/api/meeting', routes);
 
 
 dbinit()
