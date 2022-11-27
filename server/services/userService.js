@@ -1,12 +1,52 @@
+// const { async } = require('rxjs')
+const  bcrypt  = require('bcrypt')
+const  jwt  = require('jsonwebtoken')
+
 const User = require('../models/User')
 
-exports.getOne = (userId) => User.findById(userId)
-exports.addPublication = async(userId, publicationID) =>{
-// const user = await User.findById(userId)
+const secret = 'pizdec'
+async function register(email, password){
+    const existing = await User.findOne({email}).collation({locale: 'en', strength: 2})
+    if (existing){
+        throw new Error('Email is taken!')
+    }
 
-// user.publication.push(publicationID)
-// await user.save()
-// return user
-return User.updateOne({_id: userId}, {$push: {publication: publicationID}})
+  const user =  await User.create({
+        email,
+        hashedPassword: await bcrypt.hash(password, 10)
+    })
+return {
+    _id: user._id,
+    email: user.email,
+   accessToken: createToken(user)}
+
 }
-//  User.updateOne({_id: userId}, {$push: {publication: publicationID}})
+
+async function login(email, password){
+    
+}
+
+async function logout(){
+
+}
+
+
+function createToken(user){
+const payload = {
+    _id: user._id,
+    email: user.email
+}
+
+return jwt.sign(payload, secret)
+
+
+}
+function parseToken(token){
+
+}
+module.exports = {
+    register,
+    login,
+    logout,
+    parseToken
+}

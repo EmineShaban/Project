@@ -40,7 +40,7 @@ router.get('/', async (req, res) => {
 
 router.post('/create', async (req, res) => {
     // res.send('The chamber of srcrets')
-
+// console.log('aa')
     try {
         const createPublication = await meetingsServices.create({ ...req.body })
         res.redirect('/')
