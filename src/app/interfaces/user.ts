@@ -8,7 +8,7 @@ export interface IUser {
     // tel: string,
     // gender: string;
     // additionalInfo: string[]
-    // createdMeetings: string[];
+    _ownerId: string[];
     // wonMeetings: string[];
     __v: number;
 }

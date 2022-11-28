@@ -21,9 +21,9 @@ export class CreateComponent implements OnInit {
       .subscribe({
         next: (res) => {
 
-          this.router.navigate(['/meeting']);
+          this.router.navigate(['/']);
 
-          // console.log(res);
+          console.log(res);
         },
         error: (e) => console.error(e)
       });
