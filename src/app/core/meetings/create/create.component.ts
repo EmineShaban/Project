@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateService } from '../../service/create.service'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -7,7 +8,7 @@ import { CreateService } from '../../service/create.service'
 })
 export class CreateComponent implements OnInit {
 
-  constructor(private createService: CreateService) { }
+  constructor(private createService: CreateService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -19,6 +20,9 @@ export class CreateComponent implements OnInit {
     this.createService.create(data)
       .subscribe({
         next: (res) => {
+
+          this.router.navigate(['/meeting']);
+
           // console.log(res);
         },
         error: (e) => console.error(e)
