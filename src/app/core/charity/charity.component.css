@@ -1,0 +1,19 @@
+#ribbon {
+
+    background: #7C74A3;
+    background: linear-gradient(to right, #7C74A3 0%, #D4C1E8 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+/* body {
+    background-color: #B1B1CC;
+    background-color: linear-gradient(to right, #B1B1CC 0%, #dedeff 100%);
+} */
+
+body {
+    background-color: #669397;
+    }

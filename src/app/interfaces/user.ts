@@ -2,14 +2,16 @@
 
 export interface IUser {
     // firstName: string,
-    // secondName: string,
+    username: string,
     email: string,
     hashedPassword: string,
     // tel: string,
     // gender: string;
     // additionalInfo: string[]
-    _ownerId: string[];
     // wonMeetings: string[];
+
+
+    _ownerId: string[];
     __v: number;
 }
 

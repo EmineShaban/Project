@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AllMeetingsComponent } from './core/meetings/all-meetings/all-meetings.component';
 import { LoginComponent } from './core/auth/login/login.component';
 import { RegisterComponent } from './core/auth/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RegisterComponent } from './core/auth/register/register.component';
     HttpClientModule,
     CoreModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
