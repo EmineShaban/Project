@@ -22,7 +22,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  register(userData: CreateUserDto): Observable<IUser> {
+  register$(userData: CreateUserDto): Observable<IUser> {
     // return this.httpClient.post<IUser>(`${environment.apiUrl}/register`, userData, { withCredentials: true })
 
     return this.http.post<IUser>(baseUrl+'/register',userData, {withCredentials: true})
@@ -39,17 +39,13 @@ export class AuthService {
     return result
   }
 
-  logout(): Observable<any> {
-    const result = this.http.get(baseUrl+'/logout');
+  logout$(): Observable<void> {
+    // logout$(): Observable<void> {
+      return this.http
+        .post<void>(baseUrl+'/logout', {}, { withCredentials: true })
+    }
+    // return this.http.get(baseUrl+'/logout');
 
-    // const result = await get(settings.host + '/users/logout');
-
-    // sessionStorage.removeItem('email');
-    // sessionStorage.removeItem('authToken');
-    // sessionStorage.removeItem('userId');
-
-    return result;
-}
 
 
 }

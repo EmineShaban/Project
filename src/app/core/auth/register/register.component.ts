@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
 
       // ...(tel && { tel: telRegion + tel})
     }
-    this.authService.register(body).subscribe(()=> {
+    this.authService.register$(body).subscribe(()=> {
       // localStorage.setItem('auth_token', token);
 
       this.router.navigate(['/']);
