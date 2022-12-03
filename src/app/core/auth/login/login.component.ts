@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../service/auth.service";
 import { Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,18 +10,20 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    
   }
-  handleFormSubmit(value: { email: string, password: string }): void {
-    let email = value.email
-    let password = value.password
-    this.authService.login(email, password).subscribe({
-      next: (result) => {
-        sessionStorage.setItem('email', result.data)
-        sessionStorage.setItem('authToken', result.accessToken)
-        sessionStorage.setItem('userId', result._id)
+  loginFormGroup: FormGroup = this.formBuilder.group({
+    email: new FormControl(''),
+    password: new FormControl('')
+  });
+  handleFormSubmit(): void {
+
+    this.authService.login$(this.loginFormGroup.value).subscribe({
+      next: () => {
+
         this.router.navigate(['/']);
       },
       error: (e) => console.error(e)

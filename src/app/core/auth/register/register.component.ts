@@ -11,7 +11,6 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 
 export class RegisterComponent implements OnInit {
-  // tokenStorage: any;
 
   constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
 
@@ -28,30 +27,18 @@ export class RegisterComponent implements OnInit {
   })
 
   handleFormSubmit(): void {
-     console.log(this.registerFormGroup.value)
+    //  console.log(this.registerFormGroup.value)
     const { username, email, passwords } = this.registerFormGroup.value;
 
      const body: CreateUserDto = {
       username: username,
       email: email,
       hashedPassword: passwords.password,
-
-      // ...(tel && { tel: telRegion + tel})
     }
-    this.authService.register$(body).subscribe(()=> {
-      // localStorage.setItem('auth_token', token);
 
+    this.authService.register$(body).subscribe(()=> {
       this.router.navigate(['/']);
     })
-        // next: (result) => {
-
-          // sessionStorage.setItem('email', result.data)
-          // sessionStorage.setItem('authToken', result.accessToken)
-          // sessionStorage.setItem('userId', result._id)
-        
-      //   error: (e) => console.error(e)
-      // });
-
   }
 }
 
