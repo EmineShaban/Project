@@ -11,8 +11,8 @@ export class CreateService {
 
   constructor(private http: HttpClient) { }
 
-  create(data: any): Observable<any> {
-    return this.http.post(baseUrl+ '/create', data);
+  create(data: any): Observable<IMeeting[]> {
+    return this.http.post<IMeeting[]>(baseUrl+ '/create', data, {withCredentials: true});
   }
 
   getAll(): Observable<IMeeting[]> {
