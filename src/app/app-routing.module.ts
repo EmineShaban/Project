@@ -6,6 +6,7 @@ import { AllMeetingsComponent } from './core/meetings/all-meetings/all-meetings.
 import { CreateComponent } from './core/meetings/create/create.component'
 import { LoginComponent } from './core/auth/login/login.component'
 import { RegisterComponent } from './core/auth/register/register.component'
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component'
 
 export const routes: Routes = [
 
@@ -33,6 +34,10 @@ export const routes: Routes = [
       path: 'register',
       component: RegisterComponent
    },
+   {
+      path: '**',
+      component: PageNotFoundComponent
+  }
    // {
    //    path: 'profile',
    //    component: CharityComponent
