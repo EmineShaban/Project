@@ -12,6 +12,7 @@ import { AllMeetingsComponent } from './core/meetings/all-meetings/all-meetings.
 import { LoginComponent } from './core/auth/login/login.component';
 import { RegisterComponent } from './core/auth/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AllMeetingsComponent,
     LoginComponent,
     RegisterComponent,
+    PageNotFoundComponent,
     
   ],
   imports: [

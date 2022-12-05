@@ -1,5 +1,7 @@
+import { IBase } from './base';
 
-export interface IMeeting {
+export interface IMeeting extends IBase {
+    
     date: string,
     time: string,
     place: string,

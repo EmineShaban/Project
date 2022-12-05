@@ -1,5 +1,6 @@
+import { IBase } from './base';
 
-export interface ICharity {
+export interface ICharity{
     _id: string,
     nameOfFond: string,
     imageURL: string,
