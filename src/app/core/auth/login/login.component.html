@@ -1,39 +1,52 @@
-<!-- <form #createForm="ngForm" (ngSubmit)="handleFormSubmit(createForm.value)">
+<!-- <div class="registration-cssave">
+    <form>
+        <h3 class="text-center">Login form</h3>
+       <div class="form-group">
+            <input class="form-control item" type="email" name="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control item" type="password" name="password" minlength="6" id="password" placeholder="Password" required>
+        </div>
  
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email" placeholder="john.doe@gmail.com" ngModel>
-    </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block create-account" type="submit">Login</button>
+        </div>
+    </form>
+ </div>
+ -->
 
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="text" name="password" id="password" placeholder="******" ngModel>
-    </div>
-    <button>Create</button>
-</form> -->
 
-<!-- <form class="register" [formGroup]="registerFormGroup" (ngSubmit)="handleFormSubmit()"> -->
+ <div class="registration-cssave">
+
 
 <form class="login" [formGroup]="loginFormGroup" (ngSubmit)="handleFormSubmit()">
     <fieldset>
-        <h2>Login Form</h2>
 
-        <p class="field field-icon">
-            <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-            <input formControlName="email" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
-        </p>
+<div id="ribbon">
+    <p>Login form</p>
+    </div>
+        <!-- <h3 class="text-center">Login form</h3> -->
 
-        <p class="field field-icon">
-            <label for="password"><span><i class="fas fa-lock"></i></span></label>
-            <input formControlName="password" type="password" name="password" id="password" placeholder="******">
-        </p>
+        <div class="form-group">
+            <!-- <label for="email"><span><i class="fas fa-envelope"></i></span></label> -->
+            <input class="form-control item" formControlName="email" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
+        </div>
 
-        <button  (click)="handleFormSubmit()">Login</button>
+        <div class="form-group">
+            <!-- <label for="password"><span><i class="fas fa-lock"></i></span></label> -->
+            <input class="form-control item" formControlName="password" type="password" name="password" id="password" placeholder="******">
+        </div>
+        <div class="form-group">
 
+        <button class="btn btn-primary btn-block create-account" >Login</button>
+    </div>
+<!-- 
         <p class="text-center">
             Have an account?
             <a href="#">Register</a>
-        </p>
+        </p> -->
 
     </fieldset>
 </form>
+
+</div>
