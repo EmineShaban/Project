@@ -32,7 +32,8 @@
       <li><a routerLink="/charity">Charity</a></li>
       <li><a routerLink="/meeting">All meetings</a></li>
       <li><a routerLink="/create">Create meeting</a></li>
-      <li><a routerLink="/profile">Profile</a></li>
+
+      <li *ngIf=""><a routerLink="/profile">Profile</a></li>
       <li><a href="javascript:void(0);" (click)="logoutHandler()">Logout</a></li>
       <li><a routerLink="/login">Login</a></li>
       <li><a routerLink="/register">Register</a></li>

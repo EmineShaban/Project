@@ -31,7 +31,8 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
     CoreModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
