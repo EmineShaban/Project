@@ -22,10 +22,8 @@
         <p>All meetings!</p>
         </div>
     
-    <div id="products" class="row list-group">
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail" *ngFor="let meeting of allMeetings">
-                <img class="group list-group-image" src="{{meeting.imageUrl}}" alt="" width="350" height="300" />
+    <div *ngFor="let meeting of allMeetings" id="products" >
+                <img class="group list-group-image" src="{{meeting.imageUrl}}" alt="" width="450" height="450" />
                 <div class="caption">
                     <h4 class="group inner list-group-item-heading">
                         Meeting with {{user}</h4>
@@ -39,11 +37,11 @@
                                 {{meeting.time}}
                             </p>
                         </div>
-                        <div class="col-xs-12 col-md-6">
+                        <button class="button" routerLink='/meeting/{{meeting._id}}'>Details</button>
+
+                        <!-- <div class="col-xs-12 col-md-6">
                             <a class="btn btn-success" routerLink='/meeting/{{meeting._id}}'>Details</a>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
         </div>
   
