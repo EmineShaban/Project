@@ -14,12 +14,13 @@ import { RegisterComponent } from './core/auth/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { AuthModule } from './core/auth/auth.module';
+import { MeetingsModule } from './core/meetings/meetings.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateComponent,
-    AllMeetingsComponent,
+    // CreateComponent,
+    // AllMeetingsComponent,
     LoginComponent,
     RegisterComponent,
     PageNotFoundComponent,
@@ -33,7 +34,8 @@ import { AuthModule } from './core/auth/auth.module';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    AuthModule
+    AuthModule,
+    MeetingsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

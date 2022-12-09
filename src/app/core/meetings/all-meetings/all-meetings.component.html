@@ -1,21 +1,4 @@
-<!-- <p>all-meetings works!</p> -->
-<!-- 
-<div id="ribbon">
-    <p>All meetings!</p>
-    </div>
 
-<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-    <div class="col p-4 d-flex flex-column position-static" *ngFor="let meeting of allMeetings">
-        <div class="mb-1 text-muted">{{meeting.date}}</div>
-        <h3 class="mb-0">{{meeting.time}}</h3>
-        <p><img src="{{meeting.imageUrl}}" alt="" width="400" height="300"></p>
-        <p class="card-text mb-auto">{{meeting.description}}</p>
-<button routerLink="/meeting/{{meeting._id}}">Details</button>
-         <button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
-        <div *ngIf="show">{{meeting.bankAccountNumber}}</div> -->
-    <!-- </div>
-
-</div>  -->
 
 <div class="container">
     <div id="ribbon">
@@ -37,11 +20,9 @@
                                 {{meeting.time}}
                             </p>
                         </div>
-                        <button class="button" routerLink='/meeting/{{meeting._id}}'>Details</button>
+                        <button class="button">Details</button>
 
-                        <!-- <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" routerLink='/meeting/{{meeting._id}}'>Details</a>
-                </div> -->
+           
             </div>
         </div>
   

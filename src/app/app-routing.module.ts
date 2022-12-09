@@ -20,7 +20,7 @@ export const routes: Routes = [
    },
    {
       path: 'meeting',
-      component: AllMeetingsComponent
+      loadChildren: () => import('./core/meetings/meetings.module').then(m => m.MeetingsModule)
    },
    {
       path: 'create',

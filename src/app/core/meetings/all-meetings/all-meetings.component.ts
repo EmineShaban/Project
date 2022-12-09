@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IMeeting } from 'src/app/interfaces/meeting';
 import {CreateService} from '../../service/create.service'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-all-meetings',
@@ -13,7 +15,7 @@ export class AllMeetingsComponent implements OnInit {
 
   // ngOnInit(): void {
   // }
-  constructor(private createService: CreateService) { }
+  constructor(private createService: CreateService, private router: Router) { }
   show: boolean = false
 
   allMeetings: IMeeting[] | null = null;
@@ -22,7 +24,12 @@ export class AllMeetingsComponent implements OnInit {
     this.createService.getAll().subscribe({
   next: (value) =>{
   this.allMeetings = value
+  console.log(this.allMeetings )
   }
     })
   }
+
+  // navigateToDetails() {
+  //   this.router.navigate(['/meeting/this.allMeetings']);
+  // }
 }
