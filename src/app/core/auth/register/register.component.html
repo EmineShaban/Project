@@ -1,41 +1,53 @@
 <!-- <p>register works!</p> -->
 <!-- <form class="register" [formGroup]="registerFormGroup" (ngSubmit)="handleRegister()"> -->
+    <div class="registration-cssave">
 
-<!-- <form #createForm="ngForm" (ngSubmit)="handleFormSubmit()">
-
+   <form class="register" [formGroup]="registerFormGroup" (ngSubmit)="handleFormSubmit()">
+    <fieldset>
+        <div id="ribbon">
+            <p>Registration Form</p>
+        </div>
+        <!-- <div class="form-group">
+            <label for="place">Place</label>
+            <input class="form-control item" type="text" name="place" id="place" ngModel>
+        </div> -->
     <div class="form-group">
-        <label for="username">username</label>
-        <input type="text" name="username" id="username" ngModel>
+        <label for="username">Username</label>
+        <input class="form-control item" type="text" name="username" id="username" ngModel>
     </div>
   
     <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" name="email" id="email" ngModel>
+        <input class="form-control item" type="text" name="email" id="email" ngModel>
     </div>
   
     <div class="form-group">
         <label for="password">Password</label>
-        <input type="text" name="password" id="password" ngModel>
+        <input class="form-control item" type="text" name="password" id="password" ngModel>
     </div>
     <div class="form-group">
         <label for="rePassword">Repeat password</label>
-        <input type="text" name="rePassword" id="rePassword" ngModel>
+        <input class="form-control item" type="text" name="rePassword" id="rePassword" ngModel>
     </div>
-    <button >Create</button>
-</form> -->
+    <button class="btn btn-primary btn-block create-account" >Create</button>
+</fieldset>
+
+</form> 
+</div>
 <!-- [formGroup]="registerFormGroup" -->
 
-<form class="register" [formGroup]="registerFormGroup" (ngSubmit)="handleFormSubmit()">
+<!-- <form class="register" [formGroup]="registerFormGroup" (ngSubmit)="handleFormSubmit()">
 
     <fieldset>
-        <h2>Registration Form</h2>
+        <div id="ribbon">
+            <p>Registration Form</p>
+        </div>
 
-        <p class="field field-icon">
-            <label for="username"><span><i class="fas fa-user"></i></span></label>
-            <input formControlName="username"
-                [class.input-error]="registerFormGroup.controls['username'].touched && registerFormGroup.controls['username'].invalid"
-                type="text" name="username" id="username" placeholder="Johny">
-        </p>
+        <div class="form-group">
+            <label for="username">Date</label>
+            <input class="form-control item" type="text" name="username" id="username" ngModel>
+        </div>
+
 
         <p class="field field-icon">
             <label for="email"><span><i class="fas fa-envelope"></i></span></label>
@@ -57,15 +69,10 @@
         </div>
 
         <button (click)="handleFormSubmit()">Create Account</button>
-        <!-- 
-        <p class="text-center">
-            Have an account?
-            <a href="#">Log In</a>
-        </p> -->
 
     </fieldset>
 </form>
-
+ -->
 
 
 

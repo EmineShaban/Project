@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from "../../core/service/auth.service"
+import { AuthService } from "../..//service/auth.service"
 import { Router } from '@angular/router';
-import {CreateUserDto} from'../../interfaces/created'
+import {CreateUserDto} from'../../../interfaces/created'
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
