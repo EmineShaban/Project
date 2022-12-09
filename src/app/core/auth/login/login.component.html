@@ -1,54 +1,52 @@
-<div class="registration-cssave">
+<!-- <div class="registration-cssave">
+    <form>
+        <h3 class="text-center">Login form</h3>
+       <div class="form-group">
+            <input class="form-control item" type="email" name="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control item" type="password" name="password" minlength="6" id="password" placeholder="Password" required>
+        </div>
+ 
+        <div class="form-group">
+            <button class="btn btn-primary btn-block create-account" type="submit">Login</button>
+        </div>
+    </form>
+ </div>
+ -->
+
+
+ <div class="registration-cssave">
+
 
     <form class="login" [formGroup]="loginFormGroup" (ngSubmit)="handleFormSubmit()">
-    <fieldset>
-            <div id="ribbon">
-                <p>Login Form</p>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input class="form-control item" formControlName="email" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
-
-                <!-- <input class="form-control item" type="text" formControlName="email" id="email" placeholder="john.doe@gmail.com" ngModel> -->
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input class="form-control item" type="text" formControlName="password" id="password" placeholder="******" >
-            </div>
-            <div class="form-group">
-
-            <button class="btn btn-primary btn-block create-account">Login</button>
+        <fieldset>
+    
+    <div id="ribbon">
+        <p>Login form</p>
         </div>
-
-        </fieldset>
-
-    </form>
-</div>
-<!-- <form class="register" [formGroup]="registerFormGroup" (ngSubmit)="handleFormSubmit()"> -->
-
-<!-- <form class="login" [formGroup]="loginFormGroup" (ngSubmit)="handleFormSubmit()">
-    <fieldset>
-        <div id="ribbon">
-            <p>Login Form</p>
+            <!-- <h3 class="text-center">Login form</h3> -->
+    
+            <div class="form-group">
+                <!-- <label for="email"><span><i class="fas fa-envelope"></i></span></label> -->
+                <input class="form-control item" formControlName="email" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
             </div>
-
-        <p class="field field-icon">
-            <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-            <input formControlName="email" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
-        </p>
-
-        <p class="field field-icon">
-            <label for="password"><span><i class="fas fa-lock"></i></span></label>
-            <input formControlName="password" type="password" name="password" id="password" placeholder="******">
-        </p>
-
-        <button  (click)="handleFormSubmit()">Login</button>
-
-        <p class="text-center">
-            Have an account?
-            <a href="#">Register</a>
-        </p>
-
-    </fieldset>
-</form> -->
+    
+            <div class="form-group">
+                <!-- <label for="password"><span><i class="fas fa-lock"></i></span></label> -->
+                <input class="form-control item" formControlName="password" type="password" name="password" id="password" placeholder="******">
+            </div>
+            <div class="form-group">
+    
+            <button class="btn btn-primary btn-block create-account" >Login</button>
+        </div>
+    <!-- 
+            <p class="text-center">
+                Have an account?
+                <a href="#">Register</a>
+            </p> -->
+    
+        </fieldset>
+    </form>
+    
+    </div>
