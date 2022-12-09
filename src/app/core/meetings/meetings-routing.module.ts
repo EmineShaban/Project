@@ -14,10 +14,10 @@ const routes: Routes = [
       path: 'create',
       component: CreateComponent
    },
-    // {
-    //   path: ':meetingId',
-    //   component: DetailsComponent,
-    // }
+    {
+      path: ':meetingId',
+      component: DetailsComponent,
+    }
 ]
 
 export const MeetingsRoutingModule = RouterModule.forChild(routes);
