@@ -1,23 +1,30 @@
 <div class="registration-cssave">
-    <div id="ribbon">
-        <p>Login Form</p>
-        </div>
+
     <form class="login" [formGroup]="loginFormGroup" (ngSubmit)="handleFormSubmit()">
-        <fieldset>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input class="form-control item" type="text" name="email" id="email" placeholder="john.doe@gmail.com" ngModel>
-    </div>
+    <fieldset>
+            <div id="ribbon">
+                <p>Login Form</p>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control item" formControlName="email" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
 
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input class="form-control item" type="text" name="password" id="password" placeholder="******" ngModel>
-    </div>
-    <button class="btn btn-primary btn-block create-account">Create</button>
-</fieldset>
+                <!-- <input class="form-control item" type="text" formControlName="email" id="email" placeholder="john.doe@gmail.com" ngModel> -->
+            </div>
 
-</form> 
-</div> 
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control item" type="text" formControlName="password" id="password" placeholder="******" >
+            </div>
+            <div class="form-group">
+
+            <button class="btn btn-primary btn-block create-account">Login</button>
+        </div>
+
+        </fieldset>
+
+    </form>
+</div>
 <!-- <form class="register" [formGroup]="registerFormGroup" (ngSubmit)="handleFormSubmit()"> -->
 
 <!-- <form class="login" [formGroup]="loginFormGroup" (ngSubmit)="handleFormSubmit()">
