@@ -9,10 +9,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateComponent } from './core/meetings/create/create.component';
 import { FormsModule } from '@angular/forms';
 import { AllMeetingsComponent } from './core/meetings/all-meetings/all-meetings.component';
-import { LoginComponent } from './core/auth/login/login.component';
-import { RegisterComponent } from './core/auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
