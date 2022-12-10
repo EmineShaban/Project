@@ -15,7 +15,7 @@ const routes: Routes = [
       component: CreateComponent
    },
     {
-      path: ':meetingId',
+      path: 'details/:meetingId',
       component: DetailsComponent,
     }
 ]

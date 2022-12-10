@@ -24,7 +24,7 @@ export class AllMeetingsComponent implements OnInit {
     this.createService.getAll().subscribe({
   next: (value) =>{
   this.allMeetings = value
-  // console.log(this.allMeetings._id )
+  console.log(this.allMeetings )
   }
     })
   }

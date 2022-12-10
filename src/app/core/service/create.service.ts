@@ -18,6 +18,9 @@ export class CreateService {
   getAll(): Observable<IMeeting[]> {
     return this.http.get<IMeeting[]>(baseUrl);
   }
+  loadMeetingById(id: string): Observable<IMeeting[]> {
+    return this.http.get<IMeeting[]>(`${baseUrl}/details/${id}`, { withCredentials: true });
+  }
   
   }
 
