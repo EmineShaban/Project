@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { CoreModule } from "./core/core.module";
@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { AuthModule } from './core/auth/auth.module';
 import { MeetingsModule } from './core/meetings/meetings.module';
+
 
 @NgModule({
   declarations: [
@@ -35,9 +36,10 @@ import { MeetingsModule } from './core/meetings/meetings.module';
     FormsModule,
     ReactiveFormsModule,
     AuthModule,
-    MeetingsModule
+    MeetingsModule,
+
   ],
-  providers: [],
+  providers: [    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
+import { IBase } from './base';
 
 
-export interface IUser {
+export interface IUser extends IBase{
     // firstName: string,
     username: string,
     email: string,
@@ -11,8 +12,8 @@ export interface IUser {
     // wonMeetings: string[];
 
 
-    _ownerId: string[];
-    __v: number;
+    // _ownerId: string[];
+    // __v: number;
 }
 
 

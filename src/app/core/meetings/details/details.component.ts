@@ -33,7 +33,7 @@ export class DetailsComponent implements OnInit {
           mergeMap(params => {
             console.log(params)
             const themeId = params['meetingId'];
-            console.log(themeId)
+            // console.log(themeId)
 
             return this.refreshThemeRequest$.pipe(mergeMap(() => this.createService.loadMeetingById(themeId)))
           })
