@@ -22,7 +22,9 @@ export class LoginComponent implements OnInit {
   handleFormSubmit(): void {
 
     this.authService.login$(this.loginFormGroup.value).subscribe({
-      next: () => {
+      next: (user) => {
+        // this.authService.user = user;
+        // console.log(this.authService.user)
 
         this.router.navigate(['/']);
       },

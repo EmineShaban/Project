@@ -15,13 +15,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { AuthModule } from './core/auth/auth.module';
 import { MeetingsModule } from './core/meetings/meetings.module';
+import { AuthService } from './core/service/auth.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    // CreateComponent,
-    // AllMeetingsComponent,
     LoginComponent,
     RegisterComponent,
     PageNotFoundComponent,
@@ -39,7 +38,16 @@ import { MeetingsModule } from './core/meetings/meetings.module';
     MeetingsModule,
 
   ],
-  providers: [    ],
+  providers: [    
+    {
+    provide: APP_INITIALIZER,
+    useFactory: (authService: AuthService) => {
+      return () => authService.authenticate();
+    },
+    deps: [AuthService],
+    multi: true
+  } 
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IMeeting } from 'src/app/interfaces/meeting';
 import {CreateService} from '../../service/create.service'
 import { Router } from '@angular/router';
+import {AuthService} from '../../service/auth.service'
 
 
 @Component({
@@ -15,7 +16,19 @@ export class AllMeetingsComponent implements OnInit {
 
   // ngOnInit(): void {
   // }
-  constructor(private createService: CreateService, private router: Router) { }
+  constructor(private createService: CreateService, private router: Router, private authService: AuthService,) { }
+
+
+  // get isLoggedIn(){
+  //   // console.log(this.authService.isLoggedIn)
+  //   return this.authService.isLoggedIn;
+  // }
+
+  // get user(){
+  //   console.log(this.authService?.user)
+
+  //   return this.authService?.user;
+  // }
   show: boolean = false
 
   allMeetings: IMeeting[] | null = null;

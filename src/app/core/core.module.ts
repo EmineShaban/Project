@@ -5,6 +5,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CharityComponent } from './charity/charity.component';
 import { RouterModule } from '@angular/router';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
 
 
 @NgModule({
@@ -23,6 +25,13 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     HomeComponent,
     CharityComponent
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: AuthInterceptor
+    }
   ]
 })
 export class CoreModule { }

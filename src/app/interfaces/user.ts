@@ -17,9 +17,4 @@ export interface IUser extends IBase{
 }
 
 
-// interface IUser {
-//     name: string;
-//     email: string;
-//     avatar?: string;
-//   }
   
