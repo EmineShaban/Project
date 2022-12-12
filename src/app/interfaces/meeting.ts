@@ -1,4 +1,5 @@
 import { IBase } from './base';
+import { IUser } from './user';
 
 export interface IMeeting extends IBase {
     _id: string
@@ -6,5 +7,7 @@ export interface IMeeting extends IBase {
     time: string,
     place: string,
     imageUrl: string,
-    description: string
+    description: string,
+    price: string,
+    _ownerId: IUser
 }
