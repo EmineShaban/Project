@@ -11,16 +11,19 @@ export class CreateService {
 
   constructor(private http: HttpClient) { }
 
-  create(data: any): Observable<IMeeting[]> {
-    return this.http.post<IMeeting[]>(baseUrl+ '/create', data, {withCredentials: true});
+  create(data: any): Observable<IMeeting> {
+    return this.http.post<IMeeting>(baseUrl+ '/create', data, {withCredentials: true});
   }
 
   getAll(): Observable<IMeeting[]> {
     return this.http.get<IMeeting[]>(baseUrl);
   }
-  loadMeetingById(id: string): Observable<IMeeting[]> {
-    return this.http.get<IMeeting[]>(`${baseUrl}/details/${id}`, { withCredentials: true });
+  loadMeetingById(id: string): Observable<IMeeting> {
+    return this.http.get<IMeeting>(`${baseUrl}/details/${id}`, { withCredentials: true });
   }
-  
+  delete(id: string): Observable<void> {
+    return this.http.post<void>(`http://localhost:3000/meeting/details/${id}/delete`, { withCredentials: true })
+      
+  }
   }
 

@@ -31,13 +31,13 @@ export class AllMeetingsComponent implements OnInit {
   // }
   show: boolean = false
 
-  allMeetings: IMeeting[] | null = null;
+  allMeetings: IMeeting[] | null | undefined 
   
   ngOnInit(): void {
     this.createService.getAll().subscribe({
   next: (value) =>{
   this.allMeetings = value
-  console.log(this.allMeetings )
+  // console.log(value)
   }
     })
   }

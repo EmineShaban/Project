@@ -6,7 +6,6 @@
         </div>
     
     <div *ngFor="let meeting of allMeetings" id="products" >
-        <!-- {{allMeetings}} -->
                 <img class="group list-group-image" src="{{meeting.imageUrl}}" alt="" width="300" height="300" />
                 <div class="caption">
                     <h4 class="group inner list-group-item-heading">
@@ -22,10 +21,7 @@
                             </p>
                         </div>
                         <button class="button" [routerLink]="['/meeting/details', meeting._id]">Details</button>
-
-           
             </div>
         </div>
-  
     </div>
 </div>

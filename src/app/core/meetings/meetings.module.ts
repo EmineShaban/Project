@@ -6,13 +6,15 @@ import { CreateComponent } from './create/create.component';
 import { AllMeetingsComponent } from './all-meetings/all-meetings.component';
 import { DetailsComponent } from './details/details.component';
 import { FormsModule }   from '@angular/forms';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
   declarations: [
 AllMeetingsComponent,
 DetailsComponent,
-CreateComponent
+CreateComponent,
+EditComponent
   ],
   imports: [
     CommonModule,

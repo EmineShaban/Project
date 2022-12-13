@@ -56,11 +56,11 @@ export class AuthService {
 
   handleLogin(newUser: IUser) {
     // this._currentUser.next(newUser)
-    console.log(   this._currentUser.next(newUser))
+     this._currentUser.next(newUser)
   }
   handleLogout() {
     // this._currentUser.next(undefined)
-    console.log(this._currentUser.next(undefined))
+ this._currentUser.next(undefined)
   }
   // ngOnDestroy(): void {
   //   this.subscription.unsubscribe();
