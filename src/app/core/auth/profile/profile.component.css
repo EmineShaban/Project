@@ -1,0 +1,108 @@
+/*Lets load up a Google Font*/
+/* @import url(https://fonts.googleapis.com/css?family=Ubuntu); */
+
+/*Basic Reset*/
+/* * {margin: 0; padding: 0;} */
+#ribbon {
+
+    background: #7C74A3;
+    background: linear-gradient(to right, #7C74A3 0%, #D4C1E8 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+/*Some fancy BG*/
+body {
+    background: center center fixed;
+    background-size: cover;
+}
+
+.pricing_table {
+    width: 600px;
+    color: black;
+    font-size: 12px;
+    font-family: Ubuntu, arial, verdana;
+    line-height: 150%;
+    text-align: center;
+    margin: 10px auto 0 auto;
+}
+
+/*Only the direct LI child, not the .features li*/
+.pricing_table>li {
+    background: linear-gradient(#666, #333);
+    width: 100%;
+    
+    /* float: left; */
+    list-style-type: none;
+    /*For smooth hover effects if .active is replaced by :hover*/
+    /* transition: all 0.2s; */
+}
+
+.pricing_table>li.active {
+    background: linear-gradient(to bottom, #B1B1CC, #DEDEFF);
+    transform: scale(1.03);
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+}
+
+.pricing_table h2 {
+    text-transform: uppercase;
+    padding: 15px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.pricing_table .price_body {
+    /* display: inline; */
+    width: 140px;
+    height: 140px;
+    margin: 0 25px 5px;
+    border: 7px solid #b1b1cc;
+    border-radius: 100%;
+    display: inline-table;
+    line-height: 30px;
+
+
+}
+
+.pricing_table .price {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    /*Lets vertically center align the price now*/
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.pricing_table .price .price_figure {
+    display: block;
+}
+
+.pricing_table .price .price_term {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+
+.pricing_table .features li {
+	list-style-type: none;
+    text-align: left;
+	padding: 5px 50px;
+
+}
+li{
+    text-align: center;
+}
+/* #features li ul {
+
+    margin-left: 1px;
+    list-style-type: none;
+    padding: 5px 55px;
+} */
+
+.clr {
+    clear: both;
+}
