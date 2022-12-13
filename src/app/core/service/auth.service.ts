@@ -21,9 +21,9 @@ export class AuthService {
 
   // user: IUser | undefined | null = null;
 
- 
+
   constructor(private http: HttpClient) {
-  
+
   }
   register$(userData: CreateUserDto): Observable<IUser> {
     return this.http
@@ -43,24 +43,24 @@ export class AuthService {
     // this.user !== null
     return this.http
       .post<void>(baseUrl + '/logout', {}, { withCredentials: true })
-      
+
   }
 
 
   authenticate(): Observable<IUser> {
     return this.http
       .get<IUser>('http://localhost:3000/charity', { withCredentials: true })
-      // .pipe(tap(user => this.handleLogin(user) ))
+    // .pipe(tap(user => this.handleLogin(user) ))
   }
 
 
   handleLogin(newUser: IUser) {
     // this._currentUser.next(newUser)
-     this._currentUser.next(newUser)
+    this._currentUser.next(newUser)
   }
   handleLogout() {
     // this._currentUser.next(undefined)
- this._currentUser.next(undefined)
+    this._currentUser.next(undefined)
   }
   // ngOnDestroy(): void {
   //   this.subscription.unsubscribe();

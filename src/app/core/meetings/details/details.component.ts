@@ -55,23 +55,14 @@ export class DetailsComponent implements OnInit {
   }
 
   deleteHandler(meetingsId: any) {
-    console.log(meetingsId)
+    // console.log(meetingsId)
     this.createService.delete(meetingsId).subscribe({
       next: () => {
-        // this.authService.handleLogout();
 
         this.router.navigate(['/']);
       },
       error: (e) => console.error(e)
     });
-    // combineLatest([
-    //   this.activatedRoute.params.pipe(
-    //     mergeMap(params => {
-    //       const themeId = params['meetingId'];
-    //       return this.createService.delete(themeId)
-    //     })
-    //   )
-    // ])
 
   }
   //   ngOnInit(): void {
