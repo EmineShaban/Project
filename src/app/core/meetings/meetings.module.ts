@@ -5,7 +5,7 @@ import { MeetingsRoutingModule } from './meetings-routing.module';
 import { CreateComponent } from './create/create.component';
 import { AllMeetingsComponent } from './all-meetings/all-meetings.component';
 import { DetailsComponent } from './details/details.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { EditComponent } from './edit/edit.component';
 
 
@@ -14,12 +14,14 @@ import { EditComponent } from './edit/edit.component';
 AllMeetingsComponent,
 DetailsComponent,
 CreateComponent,
-EditComponent
+EditComponent,
+
   ],
   imports: [
     CommonModule,
     MeetingsRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports:[
     // CreateComponent

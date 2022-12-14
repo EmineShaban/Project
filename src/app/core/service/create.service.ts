@@ -23,7 +23,9 @@ export class CreateService {
   }
   delete(id: string): Observable<void> {
     return this.http.post<void>(`http://localhost:3000/meeting/details/${id}/delete`, { withCredentials: true })
-      
+  }
+  update(id: any, data: any): Observable<IMeeting> {
+    return this.http.put<IMeeting>(`http://localhost:3000/meeting/details/${id}/edit`, {meetingId: id,text: data}, {withCredentials: true});
   }
   }
 

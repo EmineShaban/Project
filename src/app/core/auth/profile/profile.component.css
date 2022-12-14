@@ -18,15 +18,15 @@
 /*Some fancy BG*/
 body {
     background: center center fixed;
-    background-size: cover;
+    background-size:auto
 }
 
 .pricing_table {
-    width: 600px;
+    width: 800px;
     color: black;
     font-size: 12px;
     font-family: Ubuntu, arial, verdana;
-    line-height: 150%;
+    line-height: 550%;
     text-align: center;
     margin: 10px auto 0 auto;
 }
@@ -87,15 +87,22 @@ body {
 }
 
 
-.pricing_table .features li {
+.features span{
 	list-style-type: none;
-    text-align: left;
+    /* text-align: left; */
 	padding: 5px 50px;
+    margin-bottom: 30px;
+    display: block;
+    text-align: center !important;
+    /* margin-bottom: 10px; */
+}
+/* li{
+    display: block;
+    text-align: center !important;
+    margin-bottom: 10px;
 
-}
-li{
-    text-align: center;
-}
+
+} */
 /* #features li ul {
 
     margin-left: 1px;
