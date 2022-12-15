@@ -19,13 +19,13 @@ const routes: Routes = [
       component: CreateComponent
    },
     {
-      canActivate: [AuthGuard],
       path: 'details/:meetingId',
+      canActivate: [AuthGuard],
       component: DetailsComponent,
     },
     {
+      path: 'details/edit/:meetingId',
       canActivate: [AuthGuard],
-      path: 'edit/:meetingId',
       component: EditComponent,
     }
 ]
