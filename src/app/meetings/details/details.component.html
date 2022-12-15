@@ -1,5 +1,5 @@
 <div class="container">
-    
+
     <div id="ribbon">
         <p>Details of meeting</p>
     </div>
@@ -9,7 +9,7 @@
                 <div class="product-gallery">
                     <div class="product-image">
                         <img class="active" src="{{meetings?.imageUrl}}">
-                        <h2>$19.99</h2>
+                        <!-- <h2>$19.99</h2> -->
                     </div>
                 </div>
             </div>
@@ -33,13 +33,23 @@
                     <p>{{meetings?.description}}</p>
                 </div>
                 <div class="form-group">
+                    <button *ngIf="isUserOwner" [routerLink]="['/details/edit', meetings?._id]"
+                        class="button">Edit</button>
+                    <button *ngIf="isUserOwner" href="javascript:void(0);" (click)="deleteHandler(meetings?._id)"
+                        class="button">Delete</button>
 
-                    <button *ngIf="isUserOwner" [routerLink]="['/details/edit', meetings?._id]" class="button">Edit</button>
-                    <button *ngIf="isUserOwner" href="javascript:void(0);" (click)="deleteHandler(meetings?._id)" class="button">Delete</button>
-                    <button *ngIf="!isUserOwner" href="javascript:void(0);" (click)="joinInMeeting(meetings?._id, userId._id)"class="button">Join</button>
+                        <button *ngIf="!isUserOwner && alreadyJoined; else meeting" class="button">You already joined!</button>
+                        <ng-template #meeting>
+
+                    <button *ngIf="place && !isUserOwner; else allMeeting" href="javascript:void(0);"
+                        (click)="joinInMeeting(meetings?._id, userId._id)" class="button">Avalible
+                        {{meetings?.avaliblePeople }} place</button>
+                    <ng-template #allMeeting>
+                        <button *ngIf="!isUserOwner " class="button">No avalible place!</button>
+                    </ng-template>
+                </ng-template>
+
                 </div>
-
             </div>
         </div>
-
     </div>

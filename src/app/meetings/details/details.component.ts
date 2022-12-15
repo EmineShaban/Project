@@ -16,7 +16,6 @@ export class DetailsComponent implements OnInit {
   meetings: IMeeting | null | undefined
   refreshThemeRequest$ = new BehaviorSubject(undefined);
 
-
   // canSubscribe: boolean = false;
   // currentUser?: IUser;
   // isUserOwner: boolean = false;
@@ -28,9 +27,12 @@ export class DetailsComponent implements OnInit {
   isLoggedIn$: Observable<boolean> = this.authService.loggedIn$;
   themeId: string | undefined
   userId: any;
+place: boolean = false;
+  alreadyJoined: boolean | undefined;
   //
   constructor( private router: Router, private createService: CreateService, private activatedRoute: ActivatedRoute, private authService: AuthService) { }
   ngOnInit(): void {
+
     this.userId = this.authService.currentUser;
 
     combineLatest([
@@ -48,12 +50,19 @@ export class DetailsComponent implements OnInit {
     ])
       .subscribe(([meeting, user]) => {
         this.meetings = meeting
+        this.place = meeting.avaliblePeople > 0 == true
+        this.alreadyJoined = user?.joinedMeeting.includes(meeting._id)
+        console.log(this.alreadyJoined)
+
         this.currentUser = user
         this.isUserOwner = user && this.meetings?._ownerId == user._id;
 
       }
       )
-
+      // this.place = Number(this.meetings?.avaliblePeople)>0
+      // console.log(this.place)
+      // console.log(this.meetings)
+      
   }
 
   deleteHandler(meetingsId: any) {

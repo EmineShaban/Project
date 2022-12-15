@@ -9,13 +9,13 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class ProfileComponent implements OnInit {
   userId: IUser | undefined | null;
-// allMeeting: TemplateRef<NgIfContext<boolean>>|null;
+// allMeeting2: TemplateRef<NgIfContext<boolean>>|null;
 
   constructor( private authService: AuthService,) { }
 
   ngOnInit(): void {
     this.userId = this.authService.currentUser;
-    
+    console.log(this.userId?.joinedMeeting.length)
     // console.log(this.authService.currentUser)
     // console.log(this.userId?.joinedMeeting)
     // console.log(this.userId?.createdMeeting)

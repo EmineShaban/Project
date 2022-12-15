@@ -5,7 +5,7 @@ export interface IMeeting {
     _id: string
     date: string,
     time: string,
-    avaliblePeople: string,
+    avaliblePeople: number,
     place: string,
     imageUrl: string,
     description: string,

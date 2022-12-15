@@ -18,7 +18,11 @@
         <div class="price_body">
 			<div class="price">
 				<span class="price_term">You bought</span>
-				<span class="price_figure">{{userId?.joinedMeeting?.length}}</span>
+                <span *ngIf="userId?.joinedMeeting?.length == undefined; else allMeetin2" class="price_figure">0</span>
+                <ng-template #allMeetin2>
+                    <span class="price_figure">{{this.userId?.joinedMeeting?.length}}</span>
+                </ng-template>
+				<!-- <span class="price_figure">{{userId?.joinedMeeting?.length}}</span> -->
                 <span class="price_term">meetings</span>
 
 			</div>
