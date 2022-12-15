@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { ICharity } from 'src/app/interfaces/charity';
-import { CharityService } from '../service/charity.service';
+import { CharityService } from '../../service/charity.service';
 import {ICharity} from '../../interfaces/charity'
 @Component({
   selector: 'app-charity',

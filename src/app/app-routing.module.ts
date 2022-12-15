@@ -16,11 +16,11 @@ export const routes: Routes = [
    },
    {
       path: 'meeting',
-      loadChildren: () => import('./core/meetings/meetings.module').then(m => m.MeetingsModule)
+      loadChildren: () => import('./meetings/meetings.module').then(m => m.MeetingsModule)
    },
    {
       path: 'auth',
-      loadChildren: () => import('./core/auth/auth.module').then(m => m.AuthModule)
+      loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
    {
       path: '**',

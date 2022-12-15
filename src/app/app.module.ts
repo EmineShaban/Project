@@ -6,16 +6,16 @@ import { routes } from "./app-routing.module";
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CreateComponent } from './core/meetings/create/create.component';
+import { CreateComponent } from './meetings/create/create.component';
 import { FormsModule } from '@angular/forms';
-import { AllMeetingsComponent } from './core/meetings/all-meetings/all-meetings.component';
-import { LoginComponent } from './core/auth/login/login.component';
-import { RegisterComponent } from './core/auth/register/register.component';
+import { AllMeetingsComponent } from './meetings/all-meetings/all-meetings.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
-import { AuthModule } from './core/auth/auth.module';
-import { MeetingsModule } from './core/meetings/meetings.module';
-import { AuthService } from './core/service/auth.service';
+import { AuthModule } from './auth/auth.module';
+import { MeetingsModule } from './meetings/meetings.module';
+import { AuthService } from './service/auth.service';
 
 
 @NgModule({

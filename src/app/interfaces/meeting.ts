@@ -5,10 +5,10 @@ export interface IMeeting {
     _id: string
     date: string,
     time: string,
+    avaliblePeople: string,
     place: string,
     imageUrl: string,
     description: string,
-    price: string,
     _ownerId: string
     created_at: string;
     updatedAt: string;

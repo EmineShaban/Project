@@ -1,0 +1,45 @@
+<div id="ribbon">
+    <p>All meetings!</p>
+    </div>
+<ul class="pricing_table">
+    
+    <li class="active">
+		<h2>Welcome to your profile!</h2>
+		<div class="price_body">
+			<div class="price">
+				<span class="price_term">You created</span>
+				<span *ngIf="userId?.createdMeeting?.length == undefined; else allMeeting" class="price_figure">0</span>
+                <ng-template #allMeeting>
+                    <span class="price_figure">{{userId?.createdMeeting?.length}}</span>
+                </ng-template>
+                <span class="price_term">meetings</span>
+			</div>
+		</div>
+        <div class="price_body">
+			<div class="price">
+				<span class="price_term">You bought</span>
+				<span class="price_figure">{{userId?.joinedMeeting?.length}}</span>
+                <span class="price_term">meetings</span>
+
+			</div>
+		</div>
+		<!-- <div class="footer">
+            <a href="#" class="action_button">Get Started</a>
+		</div> -->
+        <div class="future">
+                <span>Username: {{userId?.username}}</span>
+            
+        </div>
+        <div class="future">
+            <span>Email: {{userId?.email}}</span>
+            <!-- <li>Free Appointments</li>
+            <li><strong>20 Bonus Points</strong> every month</li>
+            <li>Customizable Profile Page</li>
+            <li><strong>6 months</strong> support</li> -->
+
+        </div>
+
+	</li>
+
+</ul>
+
