@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, filter, map, Observable, share, Subscription, tap } from 'rxjs';
+import { BehaviorSubject, catchError, filter, map, Observable, share, Subscription, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { IUser } from "../interfaces/user";
 import { CreateUserDto } from "../interfaces/created";
@@ -53,9 +53,14 @@ export class AuthService {
 
   authenticate(): Observable<IUser> {
     return this.http
-      .get<IUser>('http://localhost:3000/charity', { withCredentials: true })
-    // .pipe(tap(user => this.handleLogin(user) ))
-  }
+      .get<IUser>('http://localhost:3000/auth/profile', { withCredentials: true })
+      .pipe(tap(user => this.currentUser$$.next(user))
+        // catchError((err) => {
+        //   this.currentUser$$.next(null);
+        //   return throwError(() => err);
+        // })
+      );
+  }  
 
 
   handleLogin(newUser: IUser) {
@@ -68,11 +73,6 @@ export class AuthService {
     // this.currentUser$$.next(undefined)
     this.currentUser$$.next(undefined)
   }
-  // ngOnDestroy(): void {
-  //   this.subscription.unsubscribe();
-  // }
-  // handleLogout() {
-  //   this.store.dispatch(logout());
-  // }
+
 
 }

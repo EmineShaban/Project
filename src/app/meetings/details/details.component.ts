@@ -52,7 +52,8 @@ place: boolean = false;
         this.meetings = meeting
         this.place = meeting.avaliblePeople > 0 == true
         this.alreadyJoined = user?.joinedMeeting.includes(meeting._id)
-        console.log(this.alreadyJoined)
+        console.log(this.meetings._ownerId)
+        // this.createdUser = meeting?._ownerId.
 
         this.currentUser = user
         this.isUserOwner = user && this.meetings?._ownerId == user._id;
@@ -62,7 +63,7 @@ place: boolean = false;
       // this.place = Number(this.meetings?.avaliblePeople)>0
       // console.log(this.place)
       // console.log(this.meetings)
-      
+      // this.createService.loadMeetingById(themeId)))
   }
 
   deleteHandler(meetingsId: any) {

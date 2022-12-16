@@ -16,6 +16,8 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
 import { AuthModule } from './auth/auth.module';
 import { MeetingsModule } from './meetings/meetings.module';
 import { AuthService } from './service/auth.service';
+import { FaqComponent } from '../app/core/faq/faq.component';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { AuthService } from './service/auth.service';
     LoginComponent,
     RegisterComponent,
     PageNotFoundComponent,
+    FaqComponent,
+    AuthenticateComponent,
     
   ],
   imports: [
