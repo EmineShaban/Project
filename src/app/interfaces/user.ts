@@ -3,7 +3,8 @@ import { IBase } from './base';
 
 export interface IUser{
     _id: string
-    username: string,
+    firstName: string,
+    secondName: string,
     email: string,
     hashedPassword: string,
     createdMeeting: string[],

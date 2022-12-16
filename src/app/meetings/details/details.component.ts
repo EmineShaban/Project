@@ -52,7 +52,7 @@ place: boolean = false;
         this.meetings = meeting
         this.place = meeting.avaliblePeople > 0 == true
         this.alreadyJoined = user?.joinedMeeting.includes(meeting._id)
-        console.log(this.meetings._ownerId)
+        console.log(this.alreadyJoined)
         // this.createdUser = meeting?._ownerId.
 
         this.currentUser = user

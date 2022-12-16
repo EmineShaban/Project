@@ -68,3 +68,15 @@ html {
       padding-top: 35px;
       padding-bottom: 35px;
   }
+
+
+  .error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: #7777a4;
+    padding-top: 0;
+}
+
+/* .register .input-error {
+    border-left-color: #9c9cb9;
+} */

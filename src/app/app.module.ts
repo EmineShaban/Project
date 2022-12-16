@@ -18,13 +18,13 @@ import { MeetingsModule } from './meetings/meetings.module';
 import { AuthService } from './service/auth.service';
 import { FaqComponent } from '../app/core/faq/faq.component';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { EmailValidatorDirective } from './auth/email-validator.directive';
+import { ErrorHandlerInterceptor } from './error-handler.interceptor';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
     PageNotFoundComponent,
     FaqComponent,
     AuthenticateComponent,
@@ -50,7 +50,13 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
     },
     deps: [AuthService],
     multi: true
-  } 
+  } ,
+  {
+    provide: HTTP_INTERCEPTORS,
+    // deps: [AuthService],
+    multi: true,
+    useClass: ErrorHandlerInterceptor,
+  }
 ],
   bootstrap: [AppComponent]
 })
