@@ -1,114 +1,112 @@
 <div class="registration-cssave">
 
     <form class="register" [formGroup]="registerFormGroup" (ngSubmit)="handleFormSubmit()">
-    
+
         <fieldset>
             <div id="ribbon">
                 <p>Registration Form</p>
-                </div>
-    
-            <div class="form-group">
-                <input class="form-control item" 
-                formControlName="firstName" type="text" name="firstName" id="firstName" placeholder="Johny"
-                [class.input-error]="shouldShowErrorForControl('firstName')"     > </div>
-            <ng-container
-            *ngIf="shouldShowErrorForControl('firstName')">
-            <p *ngIf="registerFormGroup.controls['firstName'].errors?.['required']" class="error">
-                First name is required!
-            </p>
+            </div>
 
-            <p *ngIf="registerFormGroup.controls['firstName'].errors?.['minlength']" class="error">
-                First name must be at least 3 characters!
-            </p>
-        </ng-container>
+            <div class="form-group">
+                <input class="form-control item" formControlName="firstName" type="text" name="firstName" id="firstName"
+                    placeholder="Johny" [class.input-error]="shouldShowErrorForControl('firstName')">
+            </div>
+            <ng-container *ngIf="shouldShowErrorForControl('firstName')">
+                <p *ngIf="registerFormGroup.controls['firstName'].errors?.['required']" class="error">
+                    First name is required!
+                </p>
+
+                <p *ngIf="registerFormGroup.controls['firstName'].errors?.['minlength']" class="error">
+                    First name must be at least 3 characters!
+                </p>
+            </ng-container>
 
             <div class="form-group">
                 <!-- <label for="username"><span><i class="fas fa-user"></i></span></label> -->
-                <input class="form-control item" formControlName="secondName" type="text" name="secondName" id="secondName"
-                    placeholder="Shaban"  [class.input-error]="shouldShowErrorForControl('secondName')"  >
+                <input class="form-control item" formControlName="secondName" type="text" name="secondName"
+                    id="secondName" placeholder="Shaban" [class.input-error]="shouldShowErrorForControl('secondName')">
 
             </div>
 
-            <ng-container
-            *ngIf="shouldShowErrorForControl('secondName')">
-            <p *ngIf="registerFormGroup.controls['secondName'].errors?.['required']" class="error">
-                Second name is required!
-            </p>
+            <ng-container *ngIf="shouldShowErrorForControl('secondName')">
+                <p *ngIf="registerFormGroup.controls['secondName'].errors?.['required']" class="error">
+                    Second name is required!
+                </p>
 
-            <p *ngIf="registerFormGroup.controls['secondName'].errors?.['minlength']" class="error">
-                Second name must be at least 3 characters!
-            </p>
-        </ng-container>
+                <p *ngIf="registerFormGroup.controls['secondName'].errors?.['minlength']" class="error">
+                    Second name must be at least 3 characters!
+                </p>
+            </ng-container>
 
             <div class="form-group">
                 <!-- <label for="email"><span><i class="fas fa-envelope"></i></span></label> -->
                 <input class="form-control item" formControlName="email" type="email" name="email" id="email"
-                    placeholder="john.doe@gmail.com"  [class.input-error]="shouldShowErrorForControl('email')" >
+                    placeholder="john.doe@gmail.com" [class.input-error]="shouldShowErrorForControl('email')">
             </div>
 
-            <ng-container
-            *ngIf="shouldShowErrorForControl('email')">
-            <p *ngIf="registerFormGroup.controls['email'].errors?.['required']" class="error">
-                Email is required!
-            </p>
+            <ng-container *ngIf="shouldShowErrorForControl('email')">
+                <p *ngIf="registerFormGroup.controls['email'].errors?.['required']" class="error">
+                    Email is required!
+                </p>
 
-            <p *ngIf="registerFormGroup.controls['email'].errors?.['email']" class="error">
-                Email is not valid!
-            </p>
-        </ng-container>
+                <p *ngIf="registerFormGroup.controls['email'].errors?.['email']" class="error">
+                    Email is not valid!
+                </p>
+            </ng-container>
 
-    
+
             <div formGroupName="passwords">
                 <div class="form-group">
-    
+
                     <!-- <p class="field field-icon"> -->
                     <!-- <label for="password"><span><i class="fas fa-lock"></i></span></label> -->
                     <input class="form-control item" formControlName="password" type="password" name="password"
-                        id="password" placeholder="******" [class.input-error]="shouldShowErrorForControl('password', passwordsGroup)">
+                        id="password" placeholder="******"
+                        [class.input-error]="shouldShowErrorForControl('password', passwordsGroup)">
                     <!-- </p> -->
                 </div>
-                <ng-container
-            *ngIf="shouldShowErrorForControl('password')">
-            <p *ngIf="registerFormGroup.controls['password'].errors?.['required']" class="error">
-                Password is required!
-            </p>
+                <ng-container *ngIf="shouldShowErrorForControl('password', passwordsGroup)">
+                    <p *ngIf="passwordsGroup.controls['password'].errors?.['required']" class="error">
+                        Password is required!
+                    </p>
 
-            <p *ngIf="registerFormGroup.controls['password'].errors?.['minlength']" class="error">
-                Password must be at least 5 characters!
-            </p>
-        </ng-container>
+                    <p *ngIf="passwordsGroup.controls['password'].errors?.['minlength']" class="error">
+                        Password must be at least 5 characters!
+                    </p>
+                </ng-container>
 
                 <div class="form-group">
                     <!-- <label for="rePassword"><span><i class="fas fa-lock"></i></span></label> -->
                     <input class="form-control item" formControlName="rePassword" type="password" name="rePassword"
-                        id="rePassword" placeholder="******" >
+                        id="rePassword" placeholder="******" [class.input-error]="shouldShowErrorForControl('rePassword', passwordsGroup)">
                 </div>
                 <ng-container *ngIf="shouldShowErrorForControl('rePassword', passwordsGroup)">
-                    <p *ngIf="passwordsGroup.controls['rePassword'].errors?.['passwordMissmatch']" class="error">Repeat Password does not match password!</p>
+                    <p *ngIf="passwordsGroup.controls['rePassword'].errors?.['passwordMissmatch']" class="error">Repeat
+                        Password does not match password!</p>
                 </ng-container>
             </div>
-    
+
             <div class="form-group">
-                <button class="btn btn-primary btn-block create-account">Create Account</button>
+                <button [disabled]="registerFormGroup.invalid" class="btn btn-primary btn-block create-account">Create Account</button>
             </div>
-    
+
             <!-- 
             <p class="text-center">
                 Have an account?
                 <a href="#">Log In</a>
             </p> -->
-    
+
         </fieldset>
     </form>
-    
-    
-    </div>
-    
-    
-    
-    
-    
-    <!-- 
+
+
+</div>
+
+
+
+
+
+<!-- 
     <div class="registration-cssave">
         <form>
             <h3 class="text-center">Register form</h3>

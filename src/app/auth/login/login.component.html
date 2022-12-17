@@ -29,13 +29,32 @@
     
             <div class="form-group">
                 <!-- <label for="email"><span><i class="fas fa-envelope"></i></span></label> -->
-                <input class="form-control item" formControlName="email" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
+                <input class="form-control item" formControlName="email" type="email" name="email" id="email" placeholder="john.doe@gmail.com"
+                [class.input-error]="shouldShowErrorForControl('email')">
             </div>
-    
+            <ng-container *ngIf="shouldShowErrorForControl('email')">
+                <p *ngIf="loginFormGroup.controls['email'].errors?.['required']" class="error">
+                    Email is required!
+                </p>
+
+                <p *ngIf="loginFormGroup.controls['email'].errors?.['email']" class="error">
+                    Email is not valid!
+                </p>
+            </ng-container>
             <div class="form-group">
                 <!-- <label for="password"><span><i class="fas fa-lock"></i></span></label> -->
-                <input class="form-control item" formControlName="password" type="password" name="password" id="password" placeholder="******">
+                <input class="form-control item" formControlName="password" type="password" name="password" id="password" placeholder="******"
+                [class.input-error]="shouldShowErrorForControl('password')">
             </div>
+
+        <ng-container *ngIf="shouldShowErrorForControl('password')">
+            <p *ngIf="loginFormGroup.controls['password'].errors?.['required']" class="error">
+                Password is required!
+        </p>
+        <p *ngIf="loginFormGroup.controls['password'].errors?.['minlength']" class="error">
+            Password must be at least 5 characters!
+        </p>
+    </ng-container>
             <div class="form-group">
     
             <button class="btn btn-primary btn-block create-account" >Login</button>

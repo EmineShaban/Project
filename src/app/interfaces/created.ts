@@ -1,5 +1,6 @@
 export interface CreateUserDto {
-    username: string,
+  firstName: string,
+  secondName : string,
     email: string,
     hashedPassword: string,
   

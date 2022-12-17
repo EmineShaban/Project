@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   }
   registerFormGroup: FormGroup = this.formBuilder.group({
 
-    'firstName': new FormControl('', [Validators.required, Validators.minLength(3)]),
+    'firstName': new FormControl(null, [Validators.required, Validators.minLength(3)]),
     'secondName': new FormControl(null, [Validators.required, Validators.minLength(3)]),
     'email': new FormControl(null, [Validators.required, emailValidator]),
     'passwords': new FormGroup({
@@ -36,10 +36,11 @@ export class RegisterComponent implements OnInit {
   }
   handleFormSubmit(): void {
     //  console.log(this.registerFormGroup.value)
-    const { username, email, passwords } = this.registerFormGroup.value;
+    const { firstName, secondName, email, passwords } = this.registerFormGroup.value;
 
      const body: CreateUserDto = {
-      username: username,
+      firstName: firstName,
+      secondName : secondName,
       email: email,
       hashedPassword: passwords.password,
     }
