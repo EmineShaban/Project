@@ -1,7 +1,5 @@
-import { IBase } from './base';
 
-
-export interface IUser{
+export interface IUser {
     _id: string
     firstName: string,
     secondName: string,
@@ -16,4 +14,3 @@ export interface IUser{
 }
 
 
-  

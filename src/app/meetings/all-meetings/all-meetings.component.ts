@@ -11,9 +11,9 @@ import { AuthService } from '../../service/auth.service'
   styleUrls: ['./all-meetings.component.css']
 })
 export class AllMeetingsComponent implements OnInit {
- 
+
   constructor(private createService: CreateService, private router: Router, private authService: AuthService,) { }
-  
+
   show: boolean = false
 
   allMeetings: IMeeting[] | null | undefined
@@ -24,11 +24,5 @@ export class AllMeetingsComponent implements OnInit {
         this.allMeetings = value
       }
     })
-
-    
   }
-
-  // navigateToDetails() {
-  //   this.router.navigate(['/meeting/this.allMeetings']);
-  // }
 }

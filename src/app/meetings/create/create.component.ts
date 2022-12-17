@@ -14,7 +14,7 @@ export class CreateComponent implements OnInit {
   constructor(private createService: CreateService, private router: Router, private formBuilder: FormBuilder) { }
 
   registerFormGroup: FormGroup = this.formBuilder.group({
-    'date' : [null, [Validators.required]],
+    'date': [null, [Validators.required]],
     'time': new FormControl(null, [Validators.required]),
     'place': new FormControl(null, [Validators.required, Validators.minLength(3)]),
     'avaliblePeople': new FormControl(null, [Validators.required, Validators.minLength(1), Validators.min(1), Validators.max(30)]),
@@ -31,14 +31,10 @@ export class CreateComponent implements OnInit {
 
   handleFormSubmit(): void {
     const { date, time, place, avaliblePeople, imageUrl, description } = this.registerFormGroup.value
-console.log(this.registerFormGroup.value  )
-    this.createService.create(date, time, place, avaliblePeople, imageUrl, description )
+    this.createService.create(date, time, place, avaliblePeople, imageUrl, description)
       .subscribe({
-        next: (res) => {
-
+        next: () => {
           this.router.navigate(['/']);
-
-          console.log(res);
         },
         error: (e) => console.error(e)
 

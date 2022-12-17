@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../service/auth.service"
 import { Router } from '@angular/router';
-import {CreateUserDto} from'../../interfaces/created'
+import { CreateUserDto } from '../../interfaces/created'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { emailValidator, passwordMatch } from '../../shared/util';
 
@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
     'email': new FormControl(null, [Validators.required, emailValidator]),
     'passwords': new FormGroup({
       'password': this.passwordControl,
-      'rePassword':  new FormControl(null, [passwordMatch(this.passwordControl)]),
+      'rePassword': new FormControl(null, [passwordMatch(this.passwordControl)]),
     })
   })
   constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
@@ -35,17 +35,16 @@ export class RegisterComponent implements OnInit {
     return sourceGroup.controls[controlName].touched && sourceGroup.controls[controlName].invalid
   }
   handleFormSubmit(): void {
-    //  console.log(this.registerFormGroup.value)
     const { firstName, secondName, email, passwords } = this.registerFormGroup.value;
 
-     const body: CreateUserDto = {
+    const body: CreateUserDto = {
       firstName: firstName,
-      secondName : secondName,
+      secondName: secondName,
       email: email,
       hashedPassword: passwords.password,
     }
 
-    this.authService.register$(body).subscribe(()=> {
+    this.authService.register$(body).subscribe(() => {
       this.router.navigate(['/']);
     })
   }

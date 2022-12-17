@@ -5,7 +5,6 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { emailValidator } from '../../shared/util';
 
 const myRequired = (control: AbstractControl) => {
-  // console.log('validator called');
   return Validators.required(control);
 }
 @Component({
@@ -17,13 +16,13 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    
+
   }
   loginFormGroup: FormGroup = this.formBuilder.group({
     email: new FormControl(null, { validators: [myRequired, emailValidator], updateOn: 'submit' }),
     password: new FormControl(null, [Validators.required, Validators.minLength(5)])
   });
-  shouldShowErrorForControl(controlName: string, sourceGroup: FormGroup = this. loginFormGroup) {
+  shouldShowErrorForControl(controlName: string, sourceGroup: FormGroup = this.loginFormGroup) {
     return sourceGroup.controls[controlName].touched && sourceGroup.controls[controlName].invalid
   }
   handleFormSubmit(): void {

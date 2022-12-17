@@ -31,16 +31,5 @@ export const routes: Routes = [
       path: '**',
       component: PageNotFoundComponent
    }
-   // {
-   //    path: 'profile',
-   //    component: CharityComponent
-   // },
-
 
 ];
-// export const AppRoutingModule =RouterModule.forRoot(routes)
-// @NgModule({
-//   imports: [RouterModule.forRoot(routes)],
-//   exports: [RouterModule]
-// })
-// export class AppRoutingModule { }

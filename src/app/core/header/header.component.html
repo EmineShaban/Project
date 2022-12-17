@@ -1,41 +1,14 @@
-<!-- <header
-    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-            <use xlink:href="#bootstrap"></use>
-        </svg>
-    </a>
-
-    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a routerLink="/" class="nav-link px-2 link-secondary">Charity meetings</a></li>
-        <li><a routerLink="/charity" class="nav-link px-2 link-dark">Charity</a></li>
-        <li><a routerLink="/meeting" class="nav-link px-2 link-dark">All meetings</a></li>
-        <li><a routerLink="/create" class="nav-link px-2 link-dark">Create meetings</a></li>
-        <li><a href="/faq" class="nav-link px-2 link-dark">FAQs</a></li> -->
-        <!-- <li><a routerLink="/profile" class="nav-link px-2 link-dark">Profile</a></li>
-    </ul>
-
-    <div class="col-md-3 text-end">
-        <button href="javascript:void(0);" (click)="logoutHandler()" class="btn btn-outline-primary me-2">Logout</button>
-
-        <button routerLink="/login" class="btn btn-outline-primary me-2">Login</button>
-        <button routerLink="/register" class="btn btn-primary">Sign-up</button>
-    </div>
-</header>
- -->
-
-
 <nav id='menu'>
     <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
     <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/charity">Charity</a></li>
-      <li><a routerLink="/meeting">All meetings</a></li>
-      <li><a routerLink="/create">Create meeting</a></li>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/charity">Charity</a></li>
+        <li><a routerLink="/meeting">All meetings</a></li>
+        <li><a routerLink="/create">Create meeting</a></li>
 
-      <li *ngIf="!(isLoggedIn$ | async)" ><a routerLink="/login">Login</a></li>
-      <li *ngIf="!(isLoggedIn$ | async)"><a routerLink="/register">Register</a></li>
-      <li *ngIf="(isLoggedIn$ | async)"><a routerLink="/profile">Profile, {{userId}}</a></li>
-      <li *ngIf="(isLoggedIn$ | async)"><a href="javascript:void(0);" (click)="logoutHandler()">Logout</a></li>
+        <li *ngIf="!(isLoggedIn$ | async)"><a routerLink="/login">Login</a></li>
+        <li *ngIf="!(isLoggedIn$ | async)"><a routerLink="/register">Register</a></li>
+        <li *ngIf="(isLoggedIn$ | async)"><a routerLink="/profile">Profile, {{userId}}</a></li>
+        <li *ngIf="(isLoggedIn$ | async)"><a href="javascript:void(0);" (click)="logoutHandler()">Logout</a></li>
     </ul>
-   </nav>
+</nav>

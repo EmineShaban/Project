@@ -2,8 +2,8 @@
   display: block;
   margin-top: 1rem;
 }
-#ribbon {
 
+#ribbon {
   background: #7C74A3;
   background: linear-gradient(to right, #7C74A3 0%, #D4C1E8 100%);
   background-clip: text;
@@ -22,11 +22,13 @@
   font-weight: bold;
   font-size: 20px;
 }
+
 .faq-section {
-    background: white;
-    min-height: 100vh;
-    padding: 10vh 0 0;
+  background: white;
+  min-height: 100vh;
+  padding: 10vh 0 0;
 }
+
 .faq-title h5 {
   position: relative;
   margin-bottom: 45px;
@@ -34,16 +36,18 @@
   font-weight: 600;
   line-height: 1;
 }
+
 .faq-title h2::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    width: 20px;
-    height: 2px;
-    background: #b1b1cc;
-    bottom: -25px;
-    margin-left: -30px;
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background: #b1b1cc;
+  bottom: -25px;
+  margin-left: -30px;
 }
+
 .faq-title p {
   padding: 0 190px;
   margin-bottom: 10px;
@@ -72,9 +76,10 @@
 }
 
 .faq .card .card-header:hover {
-    background: #b1b1cc;
-    padding-left: 10px;
+  background: #b1b1cc;
+  padding-left: 10px;
 }
+
 .faq .card .card-header .faq-title {
   width: 100%;
   text-align: left;
@@ -100,7 +105,6 @@
   width: 20px;
   height: 20px;
   line-height: 14px;
-  /* float: left; */
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   border-radius: 100px;
@@ -126,13 +130,3 @@
 .faq .card .card-body p {
   margin-bottom: 50px;
 }
-
-/* @media (max-width: 991px) {
-  .faq {
-    margin-bottom: 30px;
-  }
-  .faq .card .card-header .faq-title {
-    line-height: 26px;
-    margin-top: 10px;
-  }
-} */

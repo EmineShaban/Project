@@ -1,49 +1,35 @@
 <div id="ribbon">
     <p>All meetings!</p>
-    </div>
+</div>
 <ul class="pricing_table">
-    
+
     <li class="active">
-		<h2>Welcome to your profile!</h2>
-		<div class="price_body">
-			<div class="price">
-				<span class="price_term">You created</span>
-				<span *ngIf="userId?.createdMeeting?.length == undefined; else allMeeting" class="price_figure">0</span>
+        <h2>Welcome to your profile!</h2>
+        <div class="price_body">
+            <div class="price">
+                <span class="price_term">You created</span>
+                <span *ngIf="userId?.createdMeeting?.length == undefined; else allMeeting" class="price_figure">0</span>
                 <ng-template #allMeeting>
                     <span class="price_figure">{{userId?.createdMeeting?.length}}</span>
                 </ng-template>
                 <span class="price_term">meetings</span>
-			</div>
-		</div>
+            </div>
+        </div>
         <div class="price_body">
-			<div class="price">
-				<span class="price_term">You bought</span>
+            <div class="price">
+                <span class="price_term">You bought</span>
                 <span *ngIf="userId?.joinedMeeting?.length == undefined; else allMeetin2" class="price_figure">0</span>
                 <ng-template #allMeetin2>
                     <span class="price_figure">{{this.userId?.joinedMeeting?.length}}</span>
                 </ng-template>
-				<!-- <span class="price_figure">{{userId?.joinedMeeting?.length}}</span> -->
                 <span class="price_term">meetings</span>
-
-			</div>
-		</div>
-		<!-- <div class="footer">
-            <a href="#" class="action_button">Get Started</a>
-		</div> -->
+            </div>
+        </div>
         <div class="future">
-                <span>Name: {{userId?.firstName}} {{userId?.secondName}}</span>
-            
+            <span>Name: {{userId?.firstName}} {{userId?.secondName}}</span>
         </div>
         <div class="future">
             <span>Email: {{userId?.email}}</span>
-            <!-- <li>Free Appointments</li>
-            <li><strong>20 Bonus Points</strong> every month</li>
-            <li>Customizable Profile Page</li>
-            <li><strong>6 months</strong> support</li> -->
-
         </div>
-
-	</li>
-
+    </li>
 </ul>
-

@@ -1,5 +1,4 @@
 #ribbon {
-
     background: #7C74A3;
     background: linear-gradient(to right, #7C74A3 0%, #D4C1E8 100%);
     background-clip: text;
@@ -12,7 +11,6 @@
 
 .bank {
     margin-bottom: 100px;
-
 }
 
 .products {
@@ -23,11 +21,8 @@
     padding: 30px;
     margin-bottom: 40px;
     padding-left: 40px;
-
-    /* bottom: px; */
-    /* border: 1px solid rgb(105, 105, 154);     */
-    /* background-color: yellow;  */
 }
-h1{
-   text-align: center; 
+
+h1 {
+    text-align: center;
 }

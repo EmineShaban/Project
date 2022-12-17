@@ -1,47 +1,22 @@
-/* .footer
-{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 8%;
-    background-color: #F5DEB3;
-    color: #CD853F;
-    text-align: center;
-}
-.FAQ
-{
-    color: #CD853F;
-    text-align: center;
-
-} */
-
-
 #footer {
 
-	background: linear-gradient(to bottom,  #B1B1CC,  #DEDEFF);
-    /* clear: both; */
-    position:fixed;
-        /* margin-bottom: 20px; */
-
+    background: linear-gradient(to bottom, #B1B1CC, #DEDEFF);
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 8%;
     text-align: center;
     border-radius: 0px;
-	border: 5px double #DEDEFF;
+    border: 5px double #DEDEFF;
     font-size: 18px;
-    /* height: calc(100vh - 140px); */
-    /* overflow-y: auto; */
-
 }
+
 #footer a {
-	display: block;
-	line-height: 57px;
-	padding: 0 14px;
-	text-decoration: none;
-	color: #080808;
-	font-size: 18px;
-	text-transform: capitalize;
-  /* text-align: right; */
+    display: block;
+    line-height: 57px;
+    padding: 0 14px;
+    text-decoration: none;
+    color: #080808;
+    font-size: 18px;
+    text-transform: capitalize;
 }
-

@@ -1,8 +1,3 @@
-/*Lets load up a Google Font*/
-/* @import url(https://fonts.googleapis.com/css?family=Ubuntu); */
-
-/*Basic Reset*/
-/* * {margin: 0; padding: 0;} */
 #ribbon {
 
     background: #7C74A3;
@@ -15,10 +10,9 @@
     padding-bottom: 35px;
 }
 
-/*Some fancy BG*/
 body {
     background: center center fixed;
-    background-size:auto
+    background-size: auto
 }
 
 .pricing_table {
@@ -31,15 +25,11 @@ body {
     margin: 10px auto 0 auto;
 }
 
-/*Only the direct LI child, not the .features li*/
 .pricing_table>li {
     background: linear-gradient(#666, #333);
     width: 100%;
-    
-    /* float: left; */
     list-style-type: none;
-    /*For smooth hover effects if .active is replaced by :hover*/
-    /* transition: all 0.2s; */
+
 }
 
 .pricing_table>li.active {
@@ -56,7 +46,6 @@ body {
 }
 
 .pricing_table .price_body {
-    /* display: inline; */
     width: 140px;
     height: 140px;
     margin: 0 25px 5px;
@@ -72,7 +61,6 @@ body {
     font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
-    /*Lets vertically center align the price now*/
     vertical-align: middle;
     display: table-cell;
 }
@@ -86,29 +74,13 @@ body {
     font-weight: normal;
 }
 
-
-.features span{
-	list-style-type: none;
-    /* text-align: left; */
-	padding: 5px 50px;
+.features span {
+    list-style-type: none;
+    padding: 5px 50px;
     margin-bottom: 30px;
     display: block;
     text-align: center !important;
-    /* margin-bottom: 10px; */
 }
-/* li{
-    display: block;
-    text-align: center !important;
-    margin-bottom: 10px;
-
-
-} */
-/* #features li ul {
-
-    margin-left: 1px;
-    list-style-type: none;
-    padding: 5px 55px;
-} */
 
 .clr {
     clear: both;

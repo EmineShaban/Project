@@ -1,79 +1,74 @@
+html {
+  background: #B1B1CC;
+  background-blend-mode: overlay;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+body {
+  background-color: transparent;
+}
+
+.registration-cssave {
+  padding: 100px 400px;
+}
+
+.registration-cssave form {
+  max-width: 800px;
+  padding: 50px 70px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.registration-cssave form h3 {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.registration-cssave .item {
+  border-radius: 10px;
+  margin-bottom: 25px;
+  padding: 10px 20px;
+}
 
 
+.registration-cssave .create-account {
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #b1b1cc;
+  border: none;
+  color: white;
+  margin-top: 20px;
+}
 
-html {  
-    background: #B1B1CC;
-     background-blend-mode:overlay;
-     display:flex;
-     align-items:center;
-     justify-content:center;
-     /* background-image:url(../../assets/img/image4.jpg); */
-     background-repeat:no-repeat;
-     background-size:cover;
-     height:100%;
-    }
-    
-    body {
-     background-color:transparent;
-    }
-    
-    .registration-cssave{
-     padding:100px 400px;
-    }
-    
-    .registration-cssave form {
-     max-width:800px;
-     padding:50px 70px;
-     border-radius:10px;
-     box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
-     background-color:#fff;
-    }
-    
-    .registration-cssave form h3 {
-     font-weight:bold;
-     margin-bottom:30px;
-    }
-    
-    .registration-cssave .item {
-     border-radius:10px;
-     margin-bottom:25px;
-     padding:10px 20px;
-    }
-    
-    
-    .registration-cssave .create-account {
-     border-radius:30px;
-     padding:10px 20px;
-     font-size:18px;
-     font-weight:bold;
-     background-color:#b1b1cc;
-     border:none;
-     color:white;
-     margin-top:20px;
-    }
-    
-    @media (max-width: 576px) {
-     .registration-cssave form {
-       padding:50px 20px;
-     }
-    }
-    
-
-    #ribbon {
-
-      background: #7C74A3;
-      background: linear-gradient(to right, #7C74A3 0%, #D4C1E8 100%);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 35px;
-      text-align: center;
-      padding-top: 35px;
-      padding-bottom: 35px;
+@media (max-width: 576px) {
+  .registration-cssave form {
+    padding: 50px 20px;
   }
+}
 
-  .error {
-    text-align: left;
-    border-radius: 0.3em;
-    color: #7777a4;
-    padding-top: 0;
+
+#ribbon {
+  background: #7C74A3;
+  background: linear-gradient(to right, #7C74A3 0%, #D4C1E8 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 35px;
+  text-align: center;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.error {
+  text-align: left;
+  border-radius: 0.3em;
+  color: #7777a4;
+  padding-top: 0;
 }

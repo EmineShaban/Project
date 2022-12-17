@@ -1,87 +1,93 @@
 <div class="registration-cssave">
     <form class="register" [formGroup]="registerFormGroup" (ngSubmit)="handleFormSubmit()">
 
-    <div id="ribbon">
-        <p>Create meeting!</p>
+        <div id="ribbon">
+            <p>Create meeting!</p>
         </div>
 
-    <div class="form-group">
-        <label for="date">Date</label>
-        <input class="form-control item" formControlName="date" type="date" name="date" id="date" [class.input-error]="shouldShowErrorForControl('date')">
-    </div>
-    <ng-container *ngIf="shouldShowErrorForControl('date')">
-        <p *ngIf="registerFormGroup.controls['date'].errors?.['required']" class="error">
-            Date is required!
-        </p>
-    </ng-container>
-    <div class="form-group">
-        <label for="time">Time</label>
-        <input class="form-control item" formControlName="time" type="time" name="time" id="time" [class.input-error]="shouldShowErrorForControl('time')">
-    </div>
-    <ng-container *ngIf="shouldShowErrorForControl('time')">
-        <p *ngIf="registerFormGroup.controls['time'].errors?.['required']" class="error">
-            Time is required!
-        </p>
-    </ng-container>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input class="form-control item" formControlName="date" type="date" name="date" id="date"
+                [class.input-error]="shouldShowErrorForControl('date')">
+        </div>
+        <ng-container *ngIf="shouldShowErrorForControl('date')">
+            <p *ngIf="registerFormGroup.controls['date'].errors?.['required']" class="error">
+                Date is required!
+            </p>
+        </ng-container>
+        <div class="form-group">
+            <label for="time">Time</label>
+            <input class="form-control item" formControlName="time" type="time" name="time" id="time"
+                [class.input-error]="shouldShowErrorForControl('time')">
+        </div>
+        <ng-container *ngIf="shouldShowErrorForControl('time')">
+            <p *ngIf="registerFormGroup.controls['time'].errors?.['required']" class="error">
+                Time is required!
+            </p>
+        </ng-container>
 
-    <div class="form-group">
-        <label for="avaliblePeople">Avalible for</label>
-        <input class="form-control item" formControlName="avaliblePeople" type="number" name="avaliblePeople" id="avaliblePeople" placeholder="1" [class.input-error]="shouldShowErrorForControl('avaliblePeople')">
-    </div>
-    <ng-container *ngIf="shouldShowErrorForControl('avaliblePeople')">
-        <p *ngIf="registerFormGroup.controls['avaliblePeople'].errors?.['required']" class="error" >
-           This filed is required!
-        </p>
+        <div class="form-group">
+            <label for="avaliblePeople">Avalible for</label>
+            <input class="form-control item" formControlName="avaliblePeople" type="number" name="avaliblePeople"
+                id="avaliblePeople" placeholder="1" [class.input-error]="shouldShowErrorForControl('avaliblePeople')">
+        </div>
+        <ng-container *ngIf="shouldShowErrorForControl('avaliblePeople')">
+            <p *ngIf="registerFormGroup.controls['avaliblePeople'].errors?.['required']" class="error">
+                This filed is required!
+            </p>
 
-        <p *ngIf="registerFormGroup.controls['avaliblePeople'].errors?.['minlength']" class="error">
-            Must be avalible minimum for 1 person!
-        </p>
-        <p *ngIf="registerFormGroup.controls['avaliblePeople'].errors?.['max']" class="error">
-            Must be avalible max for 30 people!
-        </p>
-        <p *ngIf="registerFormGroup.controls['avaliblePeople'].errors?.['min']" class="error">
-            Must be avalible minimum for 1 person!
-        </p>
-    </ng-container>
-    <div class="form-group">
-        <label for="place">Place</label>
-        <input class="form-control item" formControlName="place" type="text" name="place" id="place" [class.input-error]="shouldShowErrorForControl('place')">
-    </div>
-    <ng-container *ngIf="shouldShowErrorForControl('place')">
-        <p *ngIf="registerFormGroup.controls['place'].errors?.['required']" class="error">
-            Place is required!
-        </p>
+            <p *ngIf="registerFormGroup.controls['avaliblePeople'].errors?.['minlength']" class="error">
+                Must be avalible minimum for 1 person!
+            </p>
+            <p *ngIf="registerFormGroup.controls['avaliblePeople'].errors?.['max']" class="error">
+                Must be avalible max for 30 people!
+            </p>
+            <p *ngIf="registerFormGroup.controls['avaliblePeople'].errors?.['min']" class="error">
+                Must be avalible minimum for 1 person!
+            </p>
+        </ng-container>
+        <div class="form-group">
+            <label for="place">Place</label>
+            <input class="form-control item" formControlName="place" type="text" name="place" id="place"
+                [class.input-error]="shouldShowErrorForControl('place')">
+        </div>
+        <ng-container *ngIf="shouldShowErrorForControl('place')">
+            <p *ngIf="registerFormGroup.controls['place'].errors?.['required']" class="error">
+                Place is required!
+            </p>
 
-        <p *ngIf="registerFormGroup.controls['place'].errors?.['minlength']" class="error">
-            Place must be at least 3 characters!
-        </p>
-    </ng-container>
-    <div class="form-group">
-        <label for="imageUrl">Image</label>
-        <input class="form-control item" formControlName="imageUrl" type="text" name="imageUrl" id="imageUrl" [class.input-error]="shouldShowErrorForControl('imageUrl')">
-    </div>
-    <ng-container *ngIf="shouldShowErrorForControl('imageUrl')">
-        <p *ngIf="registerFormGroup.controls['imageUrl'].errors?.['required']" class="error">
-            Image is required!
-        </p>
-        <p *ngIf="registerFormGroup.controls['imageUrl'].errors?.['email']" class="error">
-            Image is not valid!
-        </p>
-    </ng-container>
-    <div class="form-group">
-        <label for="description">Description</label>
-        <input class="form-control item" formControlName="description" type="text" name="description" id="description" [class.input-error]="shouldShowErrorForControl('description')">
-    </div>
-    <ng-container *ngIf="shouldShowErrorForControl('description')">
-        <p *ngIf="registerFormGroup.controls['description'].errors?.['required']" class="error">
-            Description is required!
-        </p>
+            <p *ngIf="registerFormGroup.controls['place'].errors?.['minlength']" class="error">
+                Place must be at least 3 characters!
+            </p>
+        </ng-container>
+        <div class="form-group">
+            <label for="imageUrl">Image</label>
+            <input class="form-control item" formControlName="imageUrl" type="text" name="imageUrl" id="imageUrl"
+                [class.input-error]="shouldShowErrorForControl('imageUrl')">
+        </div>
+        <ng-container *ngIf="shouldShowErrorForControl('imageUrl')">
+            <p *ngIf="registerFormGroup.controls['imageUrl'].errors?.['required']" class="error">
+                Image is required!
+            </p>
+            <p *ngIf="registerFormGroup.controls['imageUrl'].errors?.['email']" class="error">
+                Image is not valid!
+            </p>
+        </ng-container>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input class="form-control item" formControlName="description" type="text" name="description"
+                id="description" [class.input-error]="shouldShowErrorForControl('description')">
+        </div>
+        <ng-container *ngIf="shouldShowErrorForControl('description')">
+            <p *ngIf="registerFormGroup.controls['description'].errors?.['required']" class="error">
+                Description is required!
+            </p>
 
-        <p *ngIf="registerFormGroup.controls['description'].errors?.['minlength']" class="error">
-            Description must be at least 10 characters!
-        </p>
-    </ng-container>
-    <button class="btn btn-primary btn-block create-account">Create</button>
-</form>
+            <p *ngIf="registerFormGroup.controls['description'].errors?.['minlength']" class="error">
+                Description must be at least 10 characters!
+            </p>
+        </ng-container>
+        <button class="btn btn-primary btn-block create-account">Create</button>
+    </form>
 
-</div> 
+</div>

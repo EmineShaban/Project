@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CreateService } from '../../service/create.service';
-import { map, mergeMap, tap } from 'rxjs/operators';
+import { mergeMap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { IUser } from '../../interfaces/user'
 import { IMeeting } from '../../interfaces/meeting'
@@ -15,22 +15,16 @@ import { AuthService } from '../../service/auth.service';
 export class DetailsComponent implements OnInit {
   meetings: IMeeting | null | undefined
   refreshThemeRequest$ = new BehaviorSubject(undefined);
-
-  // canSubscribe: boolean = false;
-  // currentUser?: IUser;
-  // isUserOwner: boolean = false;
-  //
-  meetingsId: string| undefined;
-  canSubscribe: boolean = false;
+  meetingsId: string | undefined;
   currentUser?: IUser | undefined | null;
   isUserOwner: boolean | undefined | null;
   isLoggedIn$: Observable<boolean> = this.authService.loggedIn$;
-  themeId: string | undefined
+  meetingId: string | undefined
   userId: any;
-place: boolean = false;
+  place: boolean = false;
   alreadyJoined: boolean | undefined;
-  //
-  constructor( private router: Router, private createService: CreateService, private activatedRoute: ActivatedRoute, private authService: AuthService) { }
+
+  constructor(private router: Router, private createService: CreateService, private activatedRoute: ActivatedRoute, private authService: AuthService) { }
   ngOnInit(): void {
 
     this.userId = this.authService.currentUser;
@@ -38,11 +32,8 @@ place: boolean = false;
     combineLatest([
       this.activatedRoute.params.pipe(
         mergeMap(params => {
-          // console.log(params)
-          const themeId = params['meetingId'];
-          // console.log(themeId)
-
-          return this.refreshThemeRequest$.pipe(mergeMap(() => this.createService.loadMeetingById(themeId)))
+          const meetingId = params['meetingId'];
+          return this.refreshThemeRequest$.pipe(mergeMap(() => this.createService.loadMeetingById(meetingId)))
         })
       ),
       this.authService.currentUser$
@@ -52,22 +43,13 @@ place: boolean = false;
         this.meetings = meeting
         this.place = meeting.avaliblePeople > 0 == true
         this.alreadyJoined = user?.joinedMeeting.includes(meeting._id)
-        console.log(this.alreadyJoined)
-        // this.createdUser = meeting?._ownerId.
-
         this.currentUser = user
         this.isUserOwner = user && this.meetings?._ownerId == user._id;
-
       }
       )
-      // this.place = Number(this.meetings?.avaliblePeople)>0
-      // console.log(this.place)
-      // console.log(this.meetings)
-      // this.createService.loadMeetingById(themeId)))
   }
 
   deleteHandler(meetingsId: any) {
-    // console.log(meetingsId)
     this.createService.delete(meetingsId).subscribe({
       next: () => {
 
@@ -77,11 +59,11 @@ place: boolean = false;
     });
 
   }
-  joinInMeeting(meetingsId: any, userId: any){
+  joinInMeeting(meetingsId: any, userId: any) {
     this.createService.join(meetingsId, userId).subscribe({
       next: () => {
 
-        // this.router.navigate(['/']);
+        this.router.navigate(['/meeting']);
       },
       error: (e) => console.error(e)
     });

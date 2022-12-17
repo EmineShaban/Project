@@ -24,7 +24,6 @@ EditComponent,
     ReactiveFormsModule,
   ],
   exports:[
-    // CreateComponent
   ]
 })
 export class MeetingsModule { }
