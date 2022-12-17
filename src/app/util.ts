@@ -1,4 +1,4 @@
-import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
+import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 
 export function emailValidator(control: AbstractControl): ValidationErrors | null {
     const value = control.value;
@@ -33,4 +33,24 @@ export function passwordMatch(passwordFormControl: AbstractControl) {
     }
 
     return validtorFn;
+}
+
+
+export function urlValidator(control: AbstractControl): ValidationErrors | null {
+    const value = control.value;
+console.log(value)
+    if (!value) {
+        return null
+    }
+    console.log(/https?:\/\/.+/.test(value))
+
+    if (!/https?:\/\/.+/.test(value)) {
+        console.log(/https?:\/\/.+/.test(value))
+
+        return {
+            
+            email: true,
+        }
+    }
+    return null;
 }

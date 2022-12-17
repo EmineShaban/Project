@@ -3,7 +3,7 @@ import { AuthService } from "../../service/auth.service"
 import { Router } from '@angular/router';
 import {CreateUserDto} from'../../interfaces/created'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { emailValidator, passwordMatch } from '../util';
+import { emailValidator, passwordMatch } from '../../util';
 
 @Component({
   selector: 'app-register',
