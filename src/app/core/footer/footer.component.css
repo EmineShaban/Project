@@ -17,11 +17,12 @@
 
 
 #footer {
-    height: 40px;
-    width: 1000px;
+
 	background: linear-gradient(to bottom,  #B1B1CC,  #DEDEFF);
-    clear: both;
-    position: fixed;
+    /* clear: both; */
+    position:fixed;
+        /* margin-bottom: 20px; */
+
     bottom: 0;
     width: 100%;
     height: 8%;
@@ -29,7 +30,8 @@
     border-radius: 0px;
 	border: 5px double #DEDEFF;
     font-size: 18px;
-
+    /* height: calc(100vh - 140px); */
+    /* overflow-y: auto; */
 
 }
 #footer a {
@@ -42,3 +44,4 @@
 	text-transform: capitalize;
   /* text-align: right; */
 }
+

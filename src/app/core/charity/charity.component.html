@@ -10,8 +10,8 @@
         <div class="mb-1 text-muted">Nov 12</div>
         <p><img src="{{charity.imageURL}}" alt="" width="400" height="300"></p>
         <p class="card-text mb-auto">{{charity.description}}</p>
-        <button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
-        <div *ngIf="show">{{charity.bankAccountNumber}}</div>
+        <!-- <button (click)="show = !show">{{show ? 'hide' : 'show'}}</button> -->
+        <div>{{charity.bankAccountNumber}}</div>
     </div>
 
 </div> 

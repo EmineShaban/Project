@@ -44,13 +44,13 @@ import { ErrorHandlerInterceptor } from './error-handler.interceptor';
   ],
   providers: [    
     {
-    provide: APP_INITIALIZER,
-    useFactory: (authService: AuthService) => {
-      return () => authService.authenticate();
+      provide: APP_INITIALIZER,
+      useFactory: (authService: AuthService) => {
+        return () => authService.authenticate();
+      },
+      deps: [AuthService],
+      multi: true
     },
-    deps: [AuthService],
-    multi: true
-  } ,
   {
     provide: HTTP_INTERCEPTORS,
     // deps: [AuthService],

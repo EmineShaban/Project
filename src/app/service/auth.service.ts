@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, filter, map, Observable, share, Subscription, tap } from 'rxjs';
+import { BehaviorSubject, filter, map, Observable, share, catchError, tap, of, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { IUser } from "../interfaces/user";
 import { CreateUserDto } from "../interfaces/created";
@@ -16,6 +16,8 @@ const baseUrl = 'http://localhost:3000/auth'
 export class AuthService {
   private currentUser$$ = new BehaviorSubject<undefined | null | IUser>(undefined);
   currentUser$ = this.currentUser$$.asObservable().pipe();
+  ;
+  
   // user = this.currentUser$$
   //   .asObservable()
   //   .pipe()
@@ -26,19 +28,25 @@ export class AuthService {
   // user: IUser | undefined | null = null;
 
 
+  subscription: Subscription;
   constructor(private http: HttpClient) {
 
+    this.subscription = this.currentUser$.subscribe(currentUser => {
+        if (currentUser) {
+          this.currentUser = currentUser
+        }  
+      });
   }
   register$(userData: CreateUserDto): Observable<IUser> {
     return this.http
       .post<IUser>(baseUrl + '/register', userData, { withCredentials: true })
-      .pipe(tap(user => this.currentUser$$.next(user)))
+      .pipe(tap(currentUser => this.currentUser$$.next(currentUser)))
   }
 
   login$(userData: { email: string, password: string }): Observable<IUser> {
     return this.http
       .post<IUser>(baseUrl + '/login', userData, { withCredentials: true })
-      .pipe(tap(user => this.currentUser$$.next(user)))
+      .pipe(tap(currentUser => this.currentUser$$.next(currentUser)))
 
 
   }
@@ -54,11 +62,16 @@ export class AuthService {
   authenticate(): Observable<IUser> {
     return this.http
       .get<IUser>('http://localhost:3000/auth/profile', { withCredentials: true })
-      .pipe(tap(user => this.currentUser$$.next(user))
-        // catchError((err) => {
-        //   this.currentUser$$.next(null);
-        //   return throwError(() => err);
-        // })
+      .pipe(tap(currentUser => this.handleLogin(currentUser)),
+      catchError((err) => {
+        this.currentUser$$.next(null)
+        return of(err)
+      })
+      // tap(user => this.user$$.next(user)),
+      // catchError((err) => {
+      //   this.user$$.next(null)
+      //   return of(err)
+      // })
       );
   }  
 

@@ -6,6 +6,8 @@
 	padding-left: 300px;
 	border-radius: 0px;
 	border: 5px double #DEDEFF;
+		/* position: fixed; */
+
 }
 #menu ul, #menu li {
 	margin: 0 auto;

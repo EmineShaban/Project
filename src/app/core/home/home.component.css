@@ -4,7 +4,6 @@ body {
   margin: 10px;
 }
 #ribbon {
-
     background: #7C74A3;
     background: linear-gradient(to right, #7C74A3 0%, #D4C1E8 100%);
     background-clip: text;
@@ -12,12 +11,12 @@ body {
     font-size: 35px;
     text-align: center;
     padding-top: 10px;
-    padding-bottom: 35px;
+    padding-bottom: 10px;
 }
 
 /* text recolor */
 h1, h4 {
-    margin-left:160px;
+    margin-left:130px;
 
     color: black !important;
 }
@@ -41,7 +40,7 @@ h1, h4 {
 width: 300px; 
 height: 300px;
 margin-left:70px;
-
+margin-bottom: 50px;
 }
 
 

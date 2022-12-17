@@ -23,7 +23,7 @@ userId: any;
 
   
   ngOnInit(): void {
-    this.userId = this.authService.currentUser?._id;
+    this.userId = this.authService.currentUser?.firstName;
 console.log(this.userId)
   }
 
