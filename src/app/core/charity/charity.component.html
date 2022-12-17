@@ -1,20 +1,17 @@
-<div id="back">
+<!-- <div id="back"> -->
 
-<div id="ribbon">
-    <p>Charity!</p>
+    <div id="ribbon">
+        <p>Charity!</p>
     </div>
-
- <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-    <div class="col p-4 d-flex flex-column position-static" *ngFor="let charity of charityList">
-        <h3 class="mb-0">{{charity.nameOfFond}}</h3>
-        <div class="mb-1 text-muted">Nov 12</div>
-        <p><img src="{{charity.imageURL}}" alt="" width="400" height="300"></p>
-        <p class="card-text mb-auto">{{charity.description}}</p>
-        <!-- <button (click)="show = !show">{{show ? 'hide' : 'show'}}</button> -->
-        <div>{{charity.bankAccountNumber}}</div>
-    </div>
-
-</div> 
-<!-- <p>Works!</p>  -->
-
+    <!-- <div class="card"> -->
+        <div class="products" *ngFor="let charity of charityList">
+            <h1>{{charity.nameOfFond}}</h1>
+            <p><img src="{{charity.imageURL}}" alt="" width="400" height="300"></p>
+            <div (click)="handleExpand()">
+                <p >{{charity.description | shorted:limit}}</p>
+            </div>
+            <div (click)="handleExpand2()" class="bank">Bank account: {{charity.bankAccountNumber | shorted:limit2}}
+            </div>
+        <!-- </div> -->
+    <!-- </div> -->
 </div>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../service/auth.service"
 import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { emailValidator } from '../../util';
+import { emailValidator } from '../../shared/util';
 
 const myRequired = (control: AbstractControl) => {
   // console.log('validator called');

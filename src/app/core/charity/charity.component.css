@@ -9,11 +9,25 @@
     padding-top: 35px;
     padding-bottom: 35px;
 }
-/* body {
-    background-color: #B1B1CC;
-    background-color: linear-gradient(to right, #B1B1CC 0%, #dedeff 100%);
-} */
 
-body {
-    background-color: #669397;
-    }
+.bank {
+    margin-bottom: 100px;
+
+}
+
+.products {
+
+    display: inline-table;
+    width: 120px;
+    height: 100px;
+    padding: 30px;
+    margin-bottom: 40px;
+    padding-left: 40px;
+
+    /* bottom: px; */
+    /* border: 1px solid rgb(105, 105, 154);     */
+    /* background-color: yellow;  */
+}
+h1{
+   text-align: center; 
+}

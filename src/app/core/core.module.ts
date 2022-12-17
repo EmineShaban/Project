@@ -7,6 +7,8 @@ import { CharityComponent } from './charity/charity.component';
 import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from '../auth/auth.interceptor';
+import { ShortedPipe } from '../shared/shorted.pipe';
+// import { ShortedPipe } from './shared/shorted.pipe';
 
 
 @NgModule({
@@ -14,7 +16,8 @@ import { AuthInterceptor } from '../auth/auth.interceptor';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CharityComponent
+    CharityComponent,
+    ShortedPipe
   ],
   imports: [
     CommonModule,

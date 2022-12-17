@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CreateService } from '../../service/create.service'
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { urlValidator } from 'src/app/util';
+import { urlValidator } from 'src/app/shared/util';
 
 
 @Component({

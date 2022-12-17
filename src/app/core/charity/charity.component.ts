@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { ICharity } from 'src/app/interfaces/charity';
+import { ShortedPipe } from '../../shared/shorted.pipe';
 import { CharityService } from '../../service/charity.service';
 import {ICharity} from '../../interfaces/charity'
 @Component({
@@ -13,6 +13,8 @@ import {ICharity} from '../../interfaces/charity'
 
 export class CharityComponent implements OnInit {
     show: boolean = false
+    limit = 30;
+    limit2 = 3;
 
   constructor(private homeService: CharityService) { }
   
@@ -25,8 +27,22 @@ export class CharityComponent implements OnInit {
   }
     })
   }
-}
+  handleExpand(): void {
+    this.limit = Infinity;
+  }
+  handleExpand2(): void {
+    this.limit2 = Infinity;
+  }
 
+  shorted(value: string, limit: number): string {
+    // console.log('ShortenPipe#transform', value);
+    if(value.length > limit) {
+      return `${value.substring(0, limit - 3)}...`;
+    }
+
+    return value;
+  }
+}
 
 // export class CharityComponent implements OnInit {
 //   charityList: any = [];

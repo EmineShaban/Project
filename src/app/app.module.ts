@@ -19,7 +19,8 @@ import { AuthService } from './service/auth.service';
 import { FaqComponent } from '../app/core/faq/faq.component';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { EmailValidatorDirective } from './auth/email-validator.directive';
-import { ErrorHandlerInterceptor } from './error-handler.interceptor';
+import { ErrorHandlerInterceptor } from './shared/error-handler.interceptor';
+import { ShortedPipe } from './shared/shorted.pipe';
 
 
 @NgModule({
